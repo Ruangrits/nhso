@@ -1,0 +1,31 @@
+{
+  "projects": {
+    "dev": "tdg-dh-truehealth-core-nonprod",
+    "stag": "tdg-dh-truehealth-core-staging",
+    "prod": "tdg-dh-truehealth-core-prod"
+  },
+  "targets": {
+    "tdg-dh-truehealth-core-prod": {
+      "hosting": {
+        "prod": [
+          "mordee-nhso"
+        ]
+      }
+    },
+    "tdg-dh-truehealth-core-staging": {
+      "hosting": {
+        "stag": [
+          "mordee-nhso-staging"
+        ]
+      }
+    },
+    "tdg-dh-truehealth-core-nonprod": {
+      "hosting": {
+        "dev": [
+          "mordee-nhso-nonprod"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
