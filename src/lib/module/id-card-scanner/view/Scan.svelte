@@ -19,7 +19,9 @@
   import {PhotoBooth} from "$lib/camera/photobooth"
   import {CameraMode} from "$lib/camera/types"
   import LayoutBase from "$lib/module/id-card-scanner/view/components/LayoutBase.svelte"
+  import type {IdCardScannerDictionary} from "$lib/core/l10n/id-card-scanner"
 
+  export let captions: IdCardScannerDictionary
   export let onClickNext: () => void
   export let onSnapShot: (imageScanned: string) => void
 
@@ -42,7 +44,7 @@
     PhotoBooth.destroy()
   })
 </script>
-<LayoutBase titleCaption="สแกนบัตรประชาชน"
+<LayoutBase titleCaption={captions.guid.title}
             isNeedStickyBottomBar={false}
             onClickNext={onClickNext}>
     <VBox custom="relative h-full pb-6 w-full">

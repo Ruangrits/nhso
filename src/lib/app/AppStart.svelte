@@ -24,9 +24,7 @@
   AppContext.set({
     mordeeAuthProvider,
     appLanguage: language,
-    baseUrl: {
-
-    },
+    baseUrl: {},
     navCtrl: new DefaultNavCtrl({
       language: language,
       platform: param.platform,

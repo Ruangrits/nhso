@@ -22,30 +22,17 @@
   } from '@bull-shark/tdh-lib-mason'
   import LayoutBase from "$lib/module/id-card-scanner/view/components/LayoutBase.svelte"
   import thaiNationId from "../thai-nation-id-card.png"
+  import type {IdCardScannerDictionary} from "$lib/core/l10n/id-card-scanner"
 
+  export let captions: IdCardScannerDictionary
   export let onClickNext: () => void
-
-  const instructions = `
-  <h2>ขั้นตอนการสแกนบัตรประชาชน</h2>
-  <ul>
-    <br>
-      <li>  - วางบัตรประชาชนบนพื้นผิวเรียบที่มีสีตัดกับสีของบัตร เช่น พื้นสีขาวหรือดำ</li>
-      <br>
-      <li>  - จัดบัตรประชาชนให้อยู่ในกรอบที่ปรากฏบนหน้าจอโทรศัพท์จนเต็ม โดยให้ขอบของบัตรพอดีกับขอบของกรอบ</li><br>
-      <li>  - ตรวจสอบให้แน่ใจว่าไม่มีเงาตกทับบนบัตร และข้อมูลบนบัตรชัดเจน</li><br>
-      <li>  - หามุมหารถ่ายที่มีแสงสว่างเพียงพอเพื่อให้เห็นข้อมูลบนบัตรได้ชัดเจน</li><br>
-      <li>  - โปรดระมัดระวังนิ้วหรือสิ่งของที่อาจบังข้อมูลบนบัตรประชาชน</li><br>
-      <li>  - แสงสะท้อนจากบัตรอาจทำให้การตรวจสอบข้อมูลยากขึ้น</li><br>
-  </ul>
-`
 </script>
-<LayoutBase titleCaption="ขั้นตอนการสแกนบัตรประชาชน"
-            footerPrimaryBtnText="ถัดไป"
+
+<LayoutBase titleCaption={captions.guid.title}
+            footerPrimaryBtnText={captions.guid.footerBtn}
             onPrimaryBtnClick={onClickNext}>
-<!--    <Card custom="h-[30%] w-full" padding="p-0">-->
-        <img src={thaiNationId}/>
-<!--    </Card>-->
+    <img src={thaiNationId}/>
     <VBox verticalAlign={VerticalAlign.Top}>
-        <Text color={TextColor.Grey500} style={TextStyle.Body2}>{@html instructions} </Text>
+        <Text color={TextColor.Grey500} style={TextStyle.Body2}>{@html captions.guid.desc} </Text>
     </VBox>
 </LayoutBase>

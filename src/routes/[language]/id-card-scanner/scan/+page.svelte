@@ -6,9 +6,12 @@
     IMAGE_SCANNED,
     SetIdCardScannerContext
   } from "$lib/module/id-card-scanner/context"
+  import {AppContext} from "$lib/app/app-context"
 
   const {stateStore} = SetIdCardScannerContext.get()
 
+  const appContext = AppContext.get()
+  const captions = appContext.translation.idCardScanner
 
   function onClickNext() {
     goto('/th/id-card-scanner/scan/preview')
@@ -21,7 +24,7 @@
 </script>
 
 
-<IdScanner {onClickNext} {onSnapShot}/>
+<IdScanner {onClickNext} {onSnapShot} {captions}/>
 
 
 

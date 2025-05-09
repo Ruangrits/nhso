@@ -1,6 +1,35 @@
 import type {MultiLingualDictionary} from '@bull-shark/tdh-lib-mason/i18n'
 import {Language} from './index'
 
+export type IdCardScannerDictionary = {
+  guid: {
+    title: string;
+    desc: string;
+  };
+  scan: {
+    title: string;
+    preview: {
+      title: string;
+      footerPrimaryBtn: string;
+      footerSecondaryBtn: string;
+    };
+  };
+  form: {
+    title: string;
+    inputFieldCitizen: {
+      label: string;
+    };
+    inputFieldName: {
+      label: string;
+    };
+    inputFieldSurname: {
+      label: string;
+    };
+    footerBtn: string;
+  };
+}
+
+
 export const IdCardScannerDictionary: MultiLingualDictionary<typeof Language> = {
   guid: {
     title: {

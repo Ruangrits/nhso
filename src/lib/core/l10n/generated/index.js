@@ -5,9 +5,133 @@
 
 export const LocalizationBundle = {
   "en": {
-    "core": {}
+    "core": {},
+    "idCardScanner": {
+      "guid": {
+        "title": "ขั้นตอนการสแกนบัตรประชาชน",
+        "desc": "<h2>ขั้นตอนการสแกนบัตรประชาชน</h2>\n  <ul>\n    <br>\n      <li>  - วางบัตรประชาชนบนพื้นผิวเรียบที่มีสีตัดกับสีของบัตร เช่น พื้นสีขาวหรือดำ</li>\n      <br>\n      <li>  - จัดบัตรประชาชนให้อยู่ในกรอบที่ปรากฏบนหน้าจอโทรศัพท์จนเต็ม โดยให้ขอบของบัตรพอดีกับขอบของกรอบ</li><br>\n      <li>  - ตรวจสอบให้แน่ใจว่าไม่มีเงาตกทับบนบัตร และข้อมูลบนบัตรชัดเจน</li><br>\n      <li>  - หามุมหารถ่ายที่มีแสงสว่างเพียงพอเพื่อให้เห็นข้อมูลบนบัตรได้ชัดเจน</li><br>\n      <li>  - โปรดระมัดระวังนิ้วหรือสิ่งของที่อาจบังข้อมูลบนบัตรประชาชน</li><br>\n      <li>  - แสงสะท้อนจากบัตรอาจทำให้การตรวจสอบข้อมูลยากขึ้น</li><br>\n  </ul>",
+        "footerBtn": "Next"
+      },
+      "scan": {
+        "title": "สแกนบัตรประชาชน",
+        "preview": {
+          "title": "สแกนบัตรประชาชน",
+          "footerPrimaryBtn": "Submit",
+          "footerSecondaryBtn": "ถ่ายใหม่อีกครั้ง"
+        }
+      },
+      "form": {
+        "title": "ขั้นตอนการสแกนบัตรประชาชน",
+        "inputFieldCitizen": {
+          "label": "เลขบัตรประชาชน"
+        },
+        "inputFieldName": {
+          "label": "ชื่อ"
+        },
+        "inputFieldSurname": {
+          "label": "นามสกุล"
+        },
+        "footerBtn": "Next"
+      }
+    },
+    "preScreen": {
+      "footerBtn": "Next",
+      "symptomSelection": {
+        "title": "Do you have any of these symptoms?",
+        "subTitle": "Symptoms that can use the right to medical treatment  according to the terms of service from NHSO.",
+        "selection": {
+          "title": "Select all of your symptoms."
+        },
+        "warnDialogServiceNotAvailable": {
+          "title": "ขออภัย ไม่สามารถให้บริการได้",
+          "des": "เนื่องจากสิทธิการรักษาพยาบาลอยู่นอกเงื่อนไขการให้บริการจากสปสช. หรือมีอาการเจ็บป่วยที่ควรรับการรักษา ณ สถานพยาบาล",
+          "btn": "รับทราบ"
+        },
+        "warnDialogRequiredField": {
+          "title": "เลือกหน่อยค่ะ้",
+          "des": "เลือกให้หนูหน่อยค่ะ",
+          "btn": "เข้าใจ?"
+        }
+      },
+      "userInfo": {
+        "selectionBirthDate": {
+          "title": "",
+          "year": {
+            "placeholder": "ปี"
+          },
+          "month": {
+            "placeholder": "เดือน"
+          },
+          "date": {
+            "placeholder": "วัน"
+          }
+        }
+      }
+    }
   },
   "th": {
-    "core": {}
+    "core": {},
+    "idCardScanner": {
+      "guid": {
+        "title": "ขั้นตอนการสแกนบัตรประชาชน",
+        "desc": "<h2>ขั้นตอนการสแกนบัตรประชาชน</h2>\n  <ul>\n    <br>\n      <li>  - วางบัตรประชาชนบนพื้นผิวเรียบที่มีสีตัดกับสีของบัตร เช่น พื้นสีขาวหรือดำ</li>\n      <br>\n      <li>  - จัดบัตรประชาชนให้อยู่ในกรอบที่ปรากฏบนหน้าจอโทรศัพท์จนเต็ม โดยให้ขอบของบัตรพอดีกับขอบของกรอบ</li><br>\n      <li>  - ตรวจสอบให้แน่ใจว่าไม่มีเงาตกทับบนบัตร และข้อมูลบนบัตรชัดเจน</li><br>\n      <li>  - หามุมหารถ่ายที่มีแสงสว่างเพียงพอเพื่อให้เห็นข้อมูลบนบัตรได้ชัดเจน</li><br>\n      <li>  - โปรดระมัดระวังนิ้วหรือสิ่งของที่อาจบังข้อมูลบนบัตรประชาชน</li><br>\n      <li>  - แสงสะท้อนจากบัตรอาจทำให้การตรวจสอบข้อมูลยากขึ้น</li><br>\n  </ul>",
+        "footerBtn": "ถัดไป"
+      },
+      "scan": {
+        "title": "สแกนบัตรประชาชน",
+        "preview": {
+          "title": "สแกนบัตรประชาชน",
+          "footerPrimaryBtn": "ยืนยัน",
+          "footerSecondaryBtn": "ถ่ายใหม่อีกครั้ง"
+        }
+      },
+      "form": {
+        "title": "ขั้นตอนการสแกนบัตรประชาชน",
+        "inputFieldCitizen": {
+          "label": "เลขบัตรประชาชน"
+        },
+        "inputFieldName": {
+          "label": "ชื่อ"
+        },
+        "inputFieldSurname": {
+          "label": "นามสกุล"
+        },
+        "footerBtn": "ถัดไป"
+      }
+    },
+    "preScreen": {
+      "footerBtn": "ถัดไป",
+      "symptomSelection": {
+        "title": "Do you have any of these symptoms?",
+        "subTitle": "Symptoms that can use the right to medical treatment  according to the terms of service from NHSO.",
+        "selection": {
+          "title": "Select all of your symptoms."
+        },
+        "warnDialogServiceNotAvailable": {
+          "title": "ขออภัย ไม่สามารถให้บริการได้",
+          "des": "เนื่องจากสิทธิการรักษาพยาบาลอยู่นอกเงื่อนไขการให้บริการจากสปสช. หรือมีอาการเจ็บป่วยที่ควรรับการรักษา ณ สถานพยาบาล",
+          "btn": "รับทราบ"
+        },
+        "warnDialogRequiredField": {
+          "title": "เลือกหน่อยค่ะ้",
+          "des": "เลือกให้หนูหน่อยค่ะ",
+          "btn": "เข้าใจ?"
+        }
+      },
+      "userInfo": {
+        "selectionBirthDate": {
+          "title": "",
+          "year": {
+            "placeholder": "ปี"
+          },
+          "month": {
+            "placeholder": "เดือน"
+          },
+          "date": {
+            "placeholder": "วัน"
+          }
+        }
+      }
+    }
   }
 };

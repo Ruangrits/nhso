@@ -1,11 +1,10 @@
 <script lang="ts">
   import {goto} from "$app/navigation"
   import {page} from "$app/state"
+  import {AppContext} from "$lib/app/app-context"
 
-  goto(`/${page.params.language}/id-card-scanner/guid`)
+  const appContext =  AppContext.get()
+  const navCtrl = appContext.navCtrl
 
+  goto(navCtrl.page().idCardScanner.guid)
 </script>
-
-
-
-
