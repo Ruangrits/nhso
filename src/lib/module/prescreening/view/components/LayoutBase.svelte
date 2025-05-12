@@ -33,13 +33,12 @@
 
 <Layout.Base>
     <TopNavBar id="top-nav-bar"
-               title="Information"
+               title="ตรวจสอบเบื้องต้น"
                leftIconName={topNavBarLeftIconName}
                onLeftIconClick={() => {history.back()}}/>
     <Layout.Body>
-        <VBox custom="p-4 h-full w-full overflow-hidden" verticalAlign={VerticalAlign.Top}
+        <VBox custom="p-4 h-full w-full overflow-y-auto" verticalAlign={VerticalAlign.Top}
               gapSize={GapSize['16px']}>
-            <StagesWizzard {numberOfPages} {currentPage} {uiCaption}/>
             <slot/>
         </VBox>
     </Layout.Body>

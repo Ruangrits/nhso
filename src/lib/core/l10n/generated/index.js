@@ -37,23 +37,52 @@ export const LocalizationBundle = {
     "preScreen": {
       "footerBtn": "Next",
       "symptomSelection": {
-        "title": "Do you have any of these symptoms?",
-        "subTitle": "Symptoms that can use the right to medical treatment  according to the terms of service from NHSO.",
-        "selection": {
-          "title": "Select all of your symptoms."
+        "title": "กรุณาระบุอาการที่ต้องการรับการปรึกษา",
+        "subTitle": "อาการที่สามารถใช้สิทธิการรักษาพยาบาลตามเงื่อนไข การให้บริการจากสปสช.",
+        "additionalSymptoms": {
+          "title": "กรอกอาการเพิ่มเติม",
+          "placeholder": "โปรดระบุอาการเบื้องต้น"
         },
         "warnDialogServiceNotAvailable": {
           "title": "ขออภัย ไม่สามารถให้บริการได้",
-          "des": "เนื่องจากสิทธิการรักษาพยาบาลอยู่นอกเงื่อนไขการให้บริการจากสปสช. หรือมีอาการเจ็บป่วยที่ควรรับการรักษา ณ สถานพยาบาล",
+          "desc": "เนื่องจากสิทธิการรักษาพยาบาลอยู่นอกเงื่อนไขการให้บริการจากสปสช. หรือมีอาการเจ็บป่วยที่ควรรับการรักษา ณ สถานพยาบาล",
           "btn": "รับทราบ"
         },
         "warnDialogRequiredField": {
           "title": "เลือกหน่อยค่ะ้",
-          "des": "เลือกให้หนูหน่อยค่ะ",
+          "desc": "เลือกให้หนูหน่อยค่ะ",
           "btn": "เข้าใจ?"
         }
       },
       "userInfo": {
+        "height": {
+          "title": "ส่วนสูง",
+          "unit": "ซม."
+        },
+        "weight": {
+          "title": "น้ำหนัก",
+          "unit": "กก."
+        },
+        "disease": {
+          "title": "โรคประจำตัว",
+          "value": {
+            "yes": "มี",
+            "no": "ไม่มี"
+          },
+          "detail": {
+            "placeholder": "โปรดระบุโรคประจำตัว"
+          }
+        },
+        "drugAllergy": {
+          "title": "ประวัติการแพ้ยา",
+          "value": {
+            "yes": "มี",
+            "no": "ไม่มี"
+          },
+          "detail": {
+            "placeholder": "โปรดระบุประวัติการแพ้ยา"
+          }
+        },
         "selectionBirthDate": {
           "title": "",
           "year": {
@@ -102,23 +131,52 @@ export const LocalizationBundle = {
     "preScreen": {
       "footerBtn": "ถัดไป",
       "symptomSelection": {
-        "title": "Do you have any of these symptoms?",
-        "subTitle": "Symptoms that can use the right to medical treatment  according to the terms of service from NHSO.",
-        "selection": {
-          "title": "Select all of your symptoms."
+        "title": "กรุณาระบุอาการที่ต้องการรับการปรึกษา",
+        "subTitle": "อาการที่สามารถใช้สิทธิการรักษาพยาบาลตามเงื่อนไข การให้บริการจากสปสช.",
+        "additionalSymptoms": {
+          "title": "กรอกอาการเพิ่มเติม",
+          "placeholder": "โปรดระบุอาการเบื้องต้น"
         },
         "warnDialogServiceNotAvailable": {
           "title": "ขออภัย ไม่สามารถให้บริการได้",
-          "des": "เนื่องจากสิทธิการรักษาพยาบาลอยู่นอกเงื่อนไขการให้บริการจากสปสช. หรือมีอาการเจ็บป่วยที่ควรรับการรักษา ณ สถานพยาบาล",
+          "desc": "เนื่องจากสิทธิการรักษาพยาบาลอยู่นอกเงื่อนไขการให้บริการจากสปสช. หรือมีอาการเจ็บป่วยที่ควรรับการรักษา ณ สถานพยาบาล",
           "btn": "รับทราบ"
         },
         "warnDialogRequiredField": {
           "title": "เลือกหน่อยค่ะ้",
-          "des": "เลือกให้หนูหน่อยค่ะ",
+          "desc": "เลือกให้หนูหน่อยค่ะ",
           "btn": "เข้าใจ?"
         }
       },
       "userInfo": {
+        "height": {
+          "title": "ส่วนสูง",
+          "unit": "ซม."
+        },
+        "weight": {
+          "title": "น้ำหนัก",
+          "unit": "กก."
+        },
+        "disease": {
+          "title": "โรคประจำตัว",
+          "value": {
+            "yes": "มี",
+            "no": "ไม่มี"
+          },
+          "detail": {
+            "placeholder": "โปรดระบุโรคประจำตัว"
+          }
+        },
+        "drugAllergy": {
+          "title": "ประวัติการแพ้ยา",
+          "value": {
+            "yes": "มี",
+            "no": "ไม่มี"
+          },
+          "detail": {
+            "placeholder": "โปรดระบุประวัติการแพ้ยา"
+          }
+        },
         "selectionBirthDate": {
           "title": "",
           "year": {
