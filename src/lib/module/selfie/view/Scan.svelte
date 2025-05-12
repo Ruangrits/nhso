@@ -10,7 +10,7 @@
   import {CameraMode} from "../../../camera/types"
   import {goto} from "$app/navigation"
 
-  let imagePreview = null
+  let imagePreview: string | null = null
   onMount(() => {
 
     setTimeout(() => {

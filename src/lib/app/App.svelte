@@ -24,7 +24,7 @@
 </script>
 
 <!--<GetAppStartQueryParamUseCase url={page.url}>-->
-<GetAppStartQueryParamUseCaseDev>
+<GetAppStartQueryParamUseCaseDev url={page.url}>
     <AppStart slot="success" let:param {param} {mordeeAuthProvider}>
         <slot/>
     </AppStart>
