@@ -1,7 +1,7 @@
 export interface SpeechRecognition extends EventTarget {
   continuous: boolean
   interimResults: boolean
-  lang: SpeechRecognitionLang
+  lang: string
   onstart: () => void
   onend: () => void
   onresult: (event: SpeechRecognitionEvent) => void
@@ -10,11 +10,6 @@ export interface SpeechRecognition extends EventTarget {
   start(): void
 
   stop(): void
-}
-
-export enum SpeechRecognitionLang {
-  TH = 'th-TH',
-  EN = 'en-US'
 }
 
 export interface SpeechRecognitionError extends Event {

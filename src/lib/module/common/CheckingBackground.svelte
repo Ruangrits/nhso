@@ -2,7 +2,7 @@
   import {
     Layout,
   } from '@bull-shark/tdh-lib-mason'
-  import checkingBackground from "./images/checking-background.png"
+  import checkingBackground from "./images/background.png"
 </script>
 
 <Layout.Base>
