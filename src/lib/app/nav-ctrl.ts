@@ -57,13 +57,17 @@ interface PagePaths {
     userInfo: string
     address: string
   }
-  selfie: string
+  selfie: {
+    guid: string
+    scan: string
+    retry: string
+  }
 }
 
 class PagePathImpl implements PagePaths {
   readonly idCardScanner: { guid: string; scan: string; form: string }
   readonly preScreen: { symptomsForm: string; userInfo: string; address: string }
-  readonly selfie: string
+  readonly selfie: {guid:string; scan:string; retry:string}
 
   constructor(private language: Language) {
     this.idCardScanner = {
@@ -76,7 +80,11 @@ class PagePathImpl implements PagePaths {
       userInfo: this.createPageUrl("/prescreen/user-info"),
       address: this.createPageUrl("/prescreen/address"),
     }
-    this.selfie = this.createPageUrl("/selfie")
+    this.selfie = {
+      guid: this.createPageUrl("/selfie/guid"),
+      scan: this.createPageUrl("/selfie/scan"),
+      retry: this.createPageUrl("/selfie/retry")
+    }
   }
 
   private createPageUrl(path: string): string {

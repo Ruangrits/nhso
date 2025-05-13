@@ -7,3 +7,4 @@ export const entries: EntryGenerator = () => {
         return { language: l }
     })
 }
+
