@@ -5,6 +5,7 @@ export type IdCardScannerDictionary = {
   guid: {
     title: string;
     desc: string;
+    footerBtn:string;
   };
   scan: {
     title: string;

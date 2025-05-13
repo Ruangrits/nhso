@@ -5,6 +5,7 @@ export type SelfieDictionary = {
     guid: {
         title:string;
         desc: string;
+        footerBtn:string;
     };
     scan: {
         title:string;
@@ -12,9 +13,9 @@ export type SelfieDictionary = {
             title:string;
             footerPrimaryBtn: string;
             footerSecondaryBtn: string;
-        }
+        };
+        footerBtn:string;
     }
-
 }
 export const SelfieDictionary: MultiLingualDictionary<typeof Language> = {
     guid: {

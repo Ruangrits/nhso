@@ -31,7 +31,8 @@
   <TopNavBar id="top-nav-bar"
                title="ยืนยันตัวตน"
                leftIconName={IconName.West}
-               onLeftIconClick={() => {isDialogVisible = false}}/> 
+              
+/>
 
   <LayoutBase titleCaption={captions.guid.title}
               footerPrimaryBtnText={captions.guid.footerBtn}
