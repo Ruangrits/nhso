@@ -6,8 +6,16 @@ export type SelfieDictionary = {
         title:string;
         desc: string;
     };
-}
+    scan: {
+        title:string;
+        preview: {
+            title:string;
+            footerPrimaryBtn: string;
+            footerSecondaryBtn: string;
+        }
+    }
 
+}
 export const SelfieDictionary: MultiLingualDictionary<typeof Language> = {
     guid: {
         title:{
@@ -22,5 +30,25 @@ export const SelfieDictionary: MultiLingualDictionary<typeof Language> = {
             th: "ถัดไป",
             en: "Next"
         }
+    },
+    scan: {
+        title:{
+            th: "กรุณาถ่ายรูปคู่ท่านและบัตรประชาชน ให้เห็นตัวอักษร และข้อมูลบนหน้าบัตรชัดเจน",
+            en: "กรุณาถ่ายรูปคู่ท่านและบัตรประชาชน ให้เห็นตัวอักษร และข้อมูลบนหน้าบัตรชัดเจน"
+        },
+        preview: {
+            title: {
+                th: "ยืนยันรูปคู่บัตรประชาชน",
+                en: "ยืนยันรูปคู่บัตรประชาชน"
+              },
+              footerPrimaryBtn: {
+                th: "ยืนยัน",
+                en: "Submit"
+              },
+              footerSecondaryBtn: {
+                th: "ถ่ายใหม่อีกครั้ง",
+                en: "ถ่ายใหม่อีกครั้ง"
+              }
+            }
     }
 }

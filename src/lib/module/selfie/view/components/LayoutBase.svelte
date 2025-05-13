@@ -30,11 +30,17 @@
   </script>
   <Layout.Base>
       <Layout.Body>
-          <VBox custom="h-full w-full px-4" verticalAlign={VerticalAlign.Top} gapSize={GapSize['18px']}>
+          <VBox custom="h-full w-full px-4" verticalAlign={VerticalAlign.Top}
+          horizontalAlign={HorizontalAlign.Center}
+          gapSize={GapSize['18px']}>
               <Text color={TextColor.Grey500} style={TextStyle.Subtitle1} align={TextAlign.Center}
                     custom="w-full py-2 pt-6">
                   {titleCaption}
               </Text>
+              <VBox
+              custom="w-full items-start text-left">
+                <slot name="bullet-list" />
+              </VBox>
               <slot/>
           </VBox>
       </Layout.Body>
