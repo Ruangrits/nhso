@@ -15,7 +15,7 @@
     IconStyle,
     IconSize
   } from '@bull-shark/tdh-lib-mason'
-  import {type SpeechRecognition, SpeechRecognitionLang} from "$lib/core/speech-recognition"
+  import {type SpeechRecognition} from "$lib/core/speech-recognition"
   import {onDestroy} from "svelte"
 
   export let value: string = ""
@@ -37,7 +37,7 @@
     recognition.continuous = true
     recognition.interimResults = true
 
-    recognition.lang = SpeechRecognitionLang.TH
+    recognition.lang = 'th-TH'
     recognition.onstart = () => {
       isListening = true
     }

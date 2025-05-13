@@ -21,12 +21,12 @@
 
   import landingChecking from "./landing-checking.png"
   import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte"
+  import CheckingBackground from "$lib/module/common/CheckingBackground.svelte"
 
   setTimeout(() => {
   goto(navCtrl.page().idCardScanner.guid)
   },2500)
 </script>
-
 <Layout.Base>
     <div class="relative h-full w-full">
         <img class="-z-50 absolute h-full w-full object-fill" src={landingChecking}>
