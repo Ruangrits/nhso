@@ -14,9 +14,10 @@ export const SetSelfieContext = {
   },
   get: (): SetSelfieContext => {
     try {
-      console.log('Selfie context:', getContext('SELFIE_CONTEXT'));
+      console.log('Selfie context:', getContext(SELFIE_CONTEXT)); 
       return getContext(SELFIE_CONTEXT)
     } catch (e) {
+      console.log(`error is ${e}`)
       throw new Error("Cannot get `SetSelfieContext`,it may not be set")
     }
   }
