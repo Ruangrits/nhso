@@ -16,6 +16,8 @@
   import { PhotoBooth } from "../../../camera/photobooth";
   import { CameraMode } from "../../../camera/types";
   import { goto } from "$app/navigation";
+  import CaptureButton from "../capture-button.png"
+
 
   export let onClickNext: () => void;
   export let onSnapShot: (selfieCaptured: string) => void;
@@ -67,7 +69,7 @@
      
 
       <!-- </Card> -->
-      <img src={imagePreview} />
+      <!-- <img src={imagePreview} /> -->
    </VBox>
   </Layout.Body>
   <footer class="bg-primary-100">
@@ -76,7 +78,7 @@
       class="relative w-16 h-16 rounded-lg shadow-[0_4px_4px_rgba(0,0,0,0.4)] hidden"
     ></div>
     <button name="take_photo" id="take_photo" on:click={snapShot}>
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="72"
         height="72"
@@ -89,7 +91,8 @@
           d="M68 36C68 53.6731 53.6731 68 36 68C18.3269 68 4 53.6731 4 36C4 18.3269 18.3269 4 36 4C53.6731 4 68 18.3269 68 36ZM72 36C72 55.8823 55.8823 72 36 72C16.1177 72 0 55.8823 0 36C0 16.1177 16.1177 0 36 0C55.8823 0 72 16.1177 72 36ZM36 66C52.5685 66 66 52.5685 66 36C66 19.4315 52.5685 6 36 6C19.4315 6 6 19.4315 6 36C6 52.5685 19.4315 66 36 66Z"
           fill="white"
         />
-      </svg>
+      </svg> -->
+    <img src={CaptureButton} alt="guide" />
     </button>
   </footer>
 </Layout.Base>
