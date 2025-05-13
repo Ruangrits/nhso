@@ -18,7 +18,7 @@
   import {onDestroy, onMount} from "svelte"
   import {PhotoBooth} from "$lib/camera/photobooth"
   import {CameraMode} from "$lib/camera/types"
-  import LayoutBase from "$lib/module/id-card-scanner/view/components/LayoutBase.svelte"
+  import LayoutBase from "$lib/module/common/LayoutBase.svelte"
   import type {IdCardScannerDictionary} from "$lib/core/l10n/id-card-scanner"
 
   export let captions: IdCardScannerDictionary

@@ -20,7 +20,7 @@
     Button,
     Width
   } from '@bull-shark/tdh-lib-mason'
-  import LayoutBase from "$lib/module/id-card-scanner/view/components/LayoutBase.svelte"
+  import LayoutBase from "$lib/module/common/LayoutBase.svelte"
   import thaiNationId from "../thai-nation-id-card.png"
   import type {IdCardScannerDictionary} from "$lib/core/l10n/id-card-scanner"
 

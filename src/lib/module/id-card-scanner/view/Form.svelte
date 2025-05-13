@@ -2,7 +2,7 @@
   import {
     InputField
   } from '@bull-shark/tdh-lib-mason'
-  import LayoutBase from "$lib/module/id-card-scanner/view/components/LayoutBase.svelte"
+  import LayoutBase from "$lib/module/common/LayoutBase.svelte"
 
   export let onClickNext: () => void
 </script>

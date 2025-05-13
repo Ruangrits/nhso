@@ -10,9 +10,13 @@
   import {CameraMode} from "../../../camera/types"
   import {goto} from "$app/navigation"
 
+  export let onClickNext: () => void
+  export let onSnapShot: (selfieCaptured: string) => void
+
+
   let imagePreview: string | null = null
   onMount(() => {
-
+    console.log("selfie mounted")
     setTimeout(() => {
       PhotoBooth.init(CameraMode.User)
     }, 200)
@@ -21,10 +25,12 @@
   function snapShot() {
     setTimeout(() => {
       let elementImg = document.getElementsByTagName('img')
-      imagePreview = elementImg[elementImg.length - 1].src
+      onSnapShot(elementImg[elementImg.length - 1].src)
+      onClickNext()
     }, 200)
 
   }
+
 
   onDestroy(() => {
     PhotoBooth.destroy()
