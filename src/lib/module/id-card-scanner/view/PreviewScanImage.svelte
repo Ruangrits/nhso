@@ -34,3 +34,5 @@
             onSecondaryBtnClick={onClickBack}>
     <img src={imageScanned}/>
 </LayoutBase>
+
+

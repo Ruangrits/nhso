@@ -19,12 +19,17 @@
     StickyBottomBar,
     Button,
     Width,
+    WarnModal,
   } from "@bull-shark/tdh-lib-mason";
   import LayoutBase from "$lib/module/common/LayoutBase.svelte";
+  import type { SelfieDictionary } from "$lib/core/l10n/selfie";
 
+  let isDialogWarnRequiredField: boolean = false
   export let selfieCaptured: string;
   export let onClickNext: () => void;
   export let onClickBack: () => void;
+  export let captions: SelfieDictionary
+
 </script>
 
 <TopNavBar
@@ -50,6 +55,11 @@
     alt=""
   />
 </LayoutBase>
+<WarnModal bind:isDialogVisible={isDialogWarnRequiredField}
+           title={captions.symptomSelection.warnDialogServiceNotAvailable.title}
+           desc={captions.symptomSelection.warnDialogServiceNotAvailable.desc}
+           primaryBtnCaption={captions.symptomSelection.warnDialogServiceNotAvailable.btn}/>
+
 
 <style>
 </style>

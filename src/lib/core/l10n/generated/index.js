@@ -108,7 +108,12 @@ export const LocalizationBundle = {
         "preview": {
           "title": "ยืนยันรูปคู่บัตรประชาชน",
           "footerPrimaryBtn": "Submit",
-          "footerSecondaryBtn": "ถ่ายใหม่อีกครั้ง"
+          "footerSecondaryBtn": "ถ่ายใหม่อีกครั้ง",
+          "invalidPicture": {
+            "title": "ขออภัย กรุณาถ่ายรูปใหม่อีกครั้ง",
+            "desc": "เนื่องจากข้อมูลจากรูปของท่าน ไม่สามารถอ่านข้อมูลได้ หรือรูปถ่ายไม่ชัดเจน กรุณาถ่ายรูปใหม่อีกครั้งค่ะ",
+            "btn": "รับทราบ"
+          }
         }
       }
     }
@@ -217,7 +222,12 @@ export const LocalizationBundle = {
         "preview": {
           "title": "ยืนยันรูปคู่บัตรประชาชน",
           "footerPrimaryBtn": "ยืนยัน",
-          "footerSecondaryBtn": "ถ่ายใหม่อีกครั้ง"
+          "footerSecondaryBtn": "ถ่ายใหม่อีกครั้ง",
+          "invalidPicture": {
+            "title": "ขออภัย กรุณาถ่ายรูปใหม่อีกครั้ง",
+            "desc": "เนื่องจากข้อมูลจากรูปของท่าน ไม่สามารถอ่านข้อมูลได้ หรือรูปถ่ายไม่ชัดเจน กรุณาถ่ายรูปใหม่อีกครั้งค่ะ",
+            "btn": "รับทราบ"
+          }
         }
       }
     }

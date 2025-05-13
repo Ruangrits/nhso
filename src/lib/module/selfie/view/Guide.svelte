@@ -30,9 +30,7 @@
   
   <TopNavBar id="top-nav-bar"
                title="ยืนยันตัวตน"
-               leftIconName={IconName.West}
-              
-/>
+               leftIconName={IconName.West}/>
 
   <LayoutBase titleCaption={captions.guid.title}
               footerPrimaryBtnText={captions.guid.footerBtn}
