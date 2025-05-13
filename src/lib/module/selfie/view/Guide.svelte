@@ -20,7 +20,7 @@
       Button,
       Width
     } from '@bull-shark/tdh-lib-mason'
-    import Guide from "../guide.png"
+  import Guide from "../guide.png"
   import type { SelfieDictionary } from '$lib/core/l10n/selfie';
   import LayoutBase from '$lib/module/common/LayoutBase.svelte';
   
