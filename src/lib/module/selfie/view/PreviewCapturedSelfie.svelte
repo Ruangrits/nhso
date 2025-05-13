@@ -22,15 +22,15 @@
   } from '@bull-shark/tdh-lib-mason'
   import LayoutBase from "$lib/module/common/LayoutBase.svelte"
 
-  export let imageScanned: string
+  export let selfieCaptured: string
   export let onClickNext: () => void
   export let onClickBack: () => void
 
 </script>
-<LayoutBase titleCaption="สแกนบัตรประชาชน"
-            footerPrimaryBtnText="ยืนยัน"
-            footerSecondaryBtnText="ถ่ายใหม่อีกครั้ง"
+<LayoutBase titleCaption="ยืนยันตัวตน"
+            footerPrimaryBtnText="ถ่ายใหม่อีกครั้ง"
+            footerSecondaryBtnText="ยืนยัน"
             onPrimaryBtnClick={onClickNext}
             onSecondaryBtnClick={onClickBack}>
-    <img src={imageScanned}/>
+    <img src={selfieCaptured}/>
 </LayoutBase>
