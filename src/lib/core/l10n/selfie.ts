@@ -19,7 +19,6 @@ export type SelfieDictionary = {
                 btn:string
             }
         };
-        footerBtn:string;
     }
 }
 export const SelfieDictionary: MultiLingualDictionary<typeof Language> = {

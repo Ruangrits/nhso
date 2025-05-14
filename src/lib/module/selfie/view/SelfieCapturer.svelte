@@ -17,6 +17,7 @@
   import { onDestroy, onMount } from "svelte";
   import { PhotoBooth } from "../../../camera/photobooth";
   import { CameraMode } from "../../../camera/types";
+  import LayoutBase from "$lib/module/common/LayoutBase.svelte"
   import { goto } from "$app/navigation";
    
   
@@ -34,28 +35,40 @@
   });
 
   function snapShot() {
-    setTimeout(() => {
-      let elementImg = document.getElementsByTagName("img");
-      onSnapShot(elementImg[elementImg.length - 1].src);
-      onClickNext();
-    }, 200);
+  const video = document.getElementById('selfie-video') as HTMLVideoElement;
+  if (!video) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    const image = canvas.toDataURL('image/png');
+
+    onSnapShot(image); 
+    onClickNext();    
   }
+}
+
+
 
   onDestroy(() => {
     PhotoBooth.destroy();
   });
 </script>
 
-<Layout.Base>
+
   <TopNavBar
     id="top-nav-bar"
     title="ยืนยันตัวตน"
     leftIconName={IconName.West}
     onLeftIconClick={() => {
-      goto("/th/selfie/guid");
+      history.back();
     }}
   />
-  <Layout.Body>
+<Layout.Base>
         <VBox verticalAlign={VerticalAlign.Top} gapSize={GapSize['32px']} custom='bg-black bg-opacity-80 h-full w-full'>
       <Text
         color={TextColor.BaseWhite}
@@ -65,8 +78,8 @@
         >กรุณาถ่ายรูปคู่ท่านและบัตรประชาชนให้เห็นตัวอักษร
         และข้อมูลบนหน้าบัตรชัดเจน</Text
       >
-        <video class= "h-[70%] w-full object-cover"></video>
-        <div class="w-full flex items-center justify-center relative py-6">
+      <video id="selfie-video" autoplay class="h-[70%] w-full object-cover"></video>
+      <div class="w-full flex items-center justify-center relative py-6">
           <div class="absolute left-1/2 transform -translate-x-1/2 px-6">
             <button name="take_photo" id="take_photo" on:click={snapShot}>
               <img src={CaptureButton} alt="capture" class="w-16 h-16" />
@@ -77,11 +90,9 @@
               <img src={FlipCamera} alt="flip_camera" />
             </button>
           </div>
-        </div>
-        
+        </div>    
    </VBox>
-  </Layout.Body>
-</Layout.Base>
+  </Layout.Base>
 
 <style>
   :root {
@@ -91,18 +102,6 @@
   }
 
 
-  footer {
-    position: absolute;
-    bottom: 0;
-    width: 100dvw;
-    height: var(--footer-height);
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: stretch;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
   button {
     padding: 3px;
     height: var(--button-height);
@@ -110,11 +109,4 @@
     cursor: pointer;
   }
 
-  circle {
-    fill: #fff;
-  }
-
-  body {
-    overflow: hidden;
-  }
 </style>

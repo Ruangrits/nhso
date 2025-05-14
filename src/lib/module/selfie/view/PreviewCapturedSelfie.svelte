@@ -30,6 +30,17 @@
   export let onClickBack: () => void;
   export let captions: SelfieDictionary
 
+  let isWarnModalVisible = false;
+  let warnModalTitle = "";
+  let warnModalDesc = "";
+  let warnModalBtn = "";
+
+  function showWarnModal({ title, desc, btn }: { title: string; desc: string; btn: string }) {
+    warnModalTitle = title;
+    warnModalDesc = desc;
+    warnModalBtn = btn;
+    isWarnModalVisible = true;
+  }
 </script>
 
 <TopNavBar
@@ -55,11 +66,8 @@
     alt=""
   />
 </LayoutBase>
-<WarnModal bind:isDialogVisible={isDialogWarnRequiredField}
+<!-- <WarnModal bind:isDialogVisible={isDialogWarnRequiredField}
            title={captions.symptomSelection.warnDialogServiceNotAvailable.title}
            desc={captions.symptomSelection.warnDialogServiceNotAvailable.desc}
-           primaryBtnCaption={captions.symptomSelection.warnDialogServiceNotAvailable.btn}/>
+           primaryBtnCaption={captions.symptomSelection.warnDialogServiceNotAvailable.btn}/> -->
 
-
-<style>
-</style>
