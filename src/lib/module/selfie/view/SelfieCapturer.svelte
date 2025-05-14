@@ -47,6 +47,7 @@
     onSnapShot(capturedImg.src);
     onClickNext();
   }, 0);
+
 }
 
 
@@ -84,7 +85,7 @@
           </button>
         </div>
         <div class="absolute right-[12%]">
-          <button name="flip_camera" id="flip_camera" on:click={() => {}}
+          <button name="flip_camera" id="flip_camera" on:click={PhotoBooth.switchCamera}
                   class="w-[12vw] max-w-[56px] aspect-square">
             <img src={FlipCamera} alt="flip_camera" class="w-full h-full object-contain" />
           </button>
