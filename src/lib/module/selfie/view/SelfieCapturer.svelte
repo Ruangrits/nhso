@@ -35,21 +35,16 @@
   });
 
   function snapShot() {
-  const video = document.getElementById('selfie-video') as HTMLVideoElement;
-  if (!video) return;
+  setTimeout(() => {
+    const capturedImg = document.querySelector('#stack-photo img') as HTMLImageElement | null;
+    if (!capturedImg || !capturedImg.src) {
+      console.warn("No captured selfie image found");
+      return;
+    }
 
-  const canvas = document.createElement('canvas');
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-
-  const ctx = canvas.getContext('2d');
-  if (ctx) {
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    const image = canvas.toDataURL('image/png');
-
-    onSnapShot(image); 
-    onClickNext();    
-  }
+    onSnapShot(capturedImg.src);
+    onClickNext();
+  }, 0);
 }
 
 
@@ -78,7 +73,9 @@
         >กรุณาถ่ายรูปคู่ท่านและบัตรประชาชนให้เห็นตัวอักษร
         และข้อมูลบนหน้าบัตรชัดเจน</Text
       >
-      <video id="selfie-video" autoplay class="h-[66%] w-full object-cover"></video>
+      <video autoplay class="h-[66%] w-full object-cover rounded-lg"></video>
+      <div id="stack-photo" class="hidden"></div>
+      
       <div class="w-full flex items-center justify-center relative py-6">
         <div class="absolute left-1/2 transform -translate-x-1/2">
           <button name="take_photo" id="take_photo" on:click={snapShot}
@@ -93,6 +90,7 @@
           </button>
         </div>
       </div>
+      
           
    </VBox>
   </Layout.Base>
