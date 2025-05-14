@@ -8,13 +8,13 @@
     TextAlign,
     GapSize,
   } from '@bull-shark/tdh-lib-mason'
-  import CheckingBackground from "$lib/module/common/CheckingBackground.svelte"
+  import BaseBackground from "$lib/module/common/BaseBackground.svelte"
 </script>
 
-<CheckingBackground>
+<BaseBackground>
     <VBox custom="w-full h-full px-4">
         <Card custom="w-full py-8">
             <slot/>
         </Card>
     </VBox>
-</CheckingBackground>
+</BaseBackground>

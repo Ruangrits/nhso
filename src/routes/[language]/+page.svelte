@@ -21,7 +21,6 @@
 
   import landingChecking from "./landing-checking.png"
   import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte"
-  import CheckingBackground from "$lib/module/common/CheckingBackground.svelte"
 
   setTimeout(() => {
   goto(navCtrl.page().idCardScanner.guid)

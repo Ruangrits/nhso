@@ -1,6 +1,15 @@
 <script lang="ts">
-
-import CheckingBackground from "$lib/module/common/CheckingBackground.svelte"
+  import {
+    VBox,
+    Text
+  } from '@bull-shark/tdh-lib-mason'
+  import BaseBackground from "$lib/module/common/BaseBackground.svelte"
+  import doctor from "../../../lib/module/common/images/doctor.png"
 </script>
 
-<CheckingBackground/>
+<BaseBackground>
+    <VBox custom="h-full w-full">
+        <img class="border-2 border-grey-300 rounded-full h-32 w-32" src={doctor}>
+        <Text></Text>
+    </VBox>
+</BaseBackground>

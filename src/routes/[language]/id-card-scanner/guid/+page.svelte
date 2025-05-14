@@ -6,7 +6,6 @@
   const appContext = AppContext.get()
   const captions = appContext.translation.idCardScanner
   const navCtrl = appContext.navCtrl
-
 </script>
 
-<Guide onClickNext={() => goto(navCtrl.page().idCardScanner.scan)} {captions}/>
+<Guide onTopBarIconLeft={() => navCtrl.exit()} onClickNext={() => goto(navCtrl.page().idCardScanner.scan)} {captions}/>

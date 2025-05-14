@@ -26,10 +26,12 @@
 
   export let captions: IdCardScannerDictionary
   export let onClickNext: () => void
+  export let onTopBarIconLeft: () => void
 </script>
 
 <LayoutBase titleCaption={captions.guid.title}
             footerPrimaryBtnText={captions.guid.footerBtn}
+            onTopBarIconLeft={onTopBarIconLeft}
             onPrimaryBtnClick={onClickNext}>
     <img src={thaiNationId}/>
     <VBox verticalAlign={VerticalAlign.Top}>
