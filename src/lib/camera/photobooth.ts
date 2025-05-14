@@ -101,8 +101,6 @@ export class PhotoBooth {
 		let addTagImg = document.createTextNode("")
 
 		img.appendChild(addTagImg)
-
 		document.getElementById("stack-photo").appendChild(img)
-
 	}
 }

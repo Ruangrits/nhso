@@ -1,17 +1,19 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+  import { AppContext } from "$lib/app/app-context";
   import { StateStore } from "$lib/core/state-store";
   import { SELFIE_CAPTURED, SetSelfieContext } from "$lib/module/selfie/context";
   import PreviewCapturedSelfie from "$lib/module/selfie/view/PreviewCapturedSelfie.svelte";
-
-  // const {stateStore} = SetSelfieContext.get()
 
   const selfieCaptured: string = StateStore.getOrCreate(SELFIE_CAPTURED, () => {
     return ""
   })
 
+  const appContext = AppContext.get()
+  const captions = appContext.translation.selfie
+
   function onClickNext() {
-    goto('/th/selfie/retry')
+    // goto('/th/selfie/scan')
   }
 
   function onClickBack() {
@@ -20,4 +22,4 @@
 
 </script>
 
-<PreviewCapturedSelfie {selfieCaptured} {onClickBack} {onClickNext} />
+<PreviewCapturedSelfie {selfieCaptured} {onClickBack} {onClickNext} {captions} />

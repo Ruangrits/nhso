@@ -40,10 +40,10 @@
   }}
 />
 <LayoutBase
-  titleCaption="ยืนยันรูปคู่บัตรประชาชน"
+  titleCaption={captions.scan.preview.title}
   isNeedStickyBottomBar={true}
-  footerPrimaryBtnText="ยืนยัน"
-  footerSecondaryBtnText="ถ่ายใหม่อีกครั้ง"
+  footerPrimaryBtnText={captions.scan.preview.footerPrimaryBtn}
+  footerSecondaryBtnText={captions.scan.preview.footerSecondaryBtn}
   onPrimaryBtnClick={onClickNext}
   onSecondaryBtnClick={onClickBack}
 >
@@ -54,8 +54,8 @@
     alt=""
   />
 </LayoutBase>
-<!-- <WarnModal bind:isDialogVisible={isDialogWarnRequiredField}
-           title={captions.symptomSelection.warnDialogServiceNotAvailable.title}
-           desc={captions.symptomSelection.warnDialogServiceNotAvailable.desc}
-           primaryBtnCaption={captions.symptomSelection.warnDialogServiceNotAvailable.btn}/> -->
+<WarnModal bind:isDialogVisible={isDialogWarnServiceNotAvailable}
+           title={captions.scan.preview.invalidPicture.title}
+           desc={captions.scan.preview.invalidPicture.desc}
+           primaryBtnCaption={captions.scan.preview.invalidPicture.btn}/>
 
