@@ -60,7 +60,7 @@
 </script>
 
 
-  <TopNavBar
+<TopNavBar
     id="top-nav-bar"
     title="ยืนยันตัวตน"
     leftIconName={IconName.West}
@@ -78,19 +78,22 @@
         >กรุณาถ่ายรูปคู่ท่านและบัตรประชาชนให้เห็นตัวอักษร
         และข้อมูลบนหน้าบัตรชัดเจน</Text
       >
-      <video id="selfie-video" autoplay class="h-[70%] w-full object-cover"></video>
+      <video id="selfie-video" autoplay class="h-[66%] w-full object-cover"></video>
       <div class="w-full flex items-center justify-center relative py-6">
-          <div class="absolute left-1/2 transform -translate-x-1/2 px-6">
-            <button name="take_photo" id="take_photo" on:click={snapShot}>
-              <img src={CaptureButton} alt="capture" class="w-16 h-16" />
-            </button>
-          </div>
-                  <div class="absolute right-[12%]">
-            <button name="flash_button" id="flash_button" on:click={() => { /* add logic here */ }}>
-              <img src={FlipCamera} alt="flip_camera" />
-            </button>
-          </div>
-        </div>    
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+          <button name="take_photo" id="take_photo" on:click={snapShot}
+                  class="w-[18vw] max-w-[72px] aspect-square rounded-full">
+            <img src={CaptureButton} alt="capture" class="w-full h-full object-contain" />
+          </button>
+        </div>
+        <div class="absolute right-[12%]">
+          <button name="flip_camera" id="flip_camera" on:click={() => {}}
+                  class="w-[12vw] max-w-[56px] aspect-square">
+            <img src={FlipCamera} alt="flip_camera" class="w-full h-full object-contain" />
+          </button>
+        </div>
+      </div>
+          
    </VBox>
   </Layout.Base>
 

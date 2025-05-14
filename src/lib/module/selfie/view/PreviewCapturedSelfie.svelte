@@ -24,23 +24,11 @@
   import LayoutBase from "$lib/module/common/LayoutBase.svelte";
   import type { SelfieDictionary } from "$lib/core/l10n/selfie";
 
-  let isDialogWarnRequiredField: boolean = false
+  let isDialogWarnServiceNotAvailable: boolean = false
   export let selfieCaptured: string;
   export let onClickNext: () => void;
   export let onClickBack: () => void;
   export let captions: SelfieDictionary
-
-  let isWarnModalVisible = false;
-  let warnModalTitle = "";
-  let warnModalDesc = "";
-  let warnModalBtn = "";
-
-  function showWarnModal({ title, desc, btn }: { title: string; desc: string; btn: string }) {
-    warnModalTitle = title;
-    warnModalDesc = desc;
-    warnModalBtn = btn;
-    isWarnModalVisible = true;
-  }
 </script>
 
 <TopNavBar
@@ -54,15 +42,15 @@
 <LayoutBase
   titleCaption="ยืนยันรูปคู่บัตรประชาชน"
   isNeedStickyBottomBar={true}
-  footerPrimaryBtnText="ถ่ายใหม่อีกครั้ง"
-  footerSecondaryBtnText="ยืนยัน"
+  footerPrimaryBtnText="ยืนยัน"
+  footerSecondaryBtnText="ถ่ายใหม่อีกครั้ง"
   onPrimaryBtnClick={onClickNext}
   onSecondaryBtnClick={onClickBack}
 >
   <img
     src={selfieCaptured}
     id="selie-preview"
-    class="h-[350px] object-cover selfie-preview"
+    class="h-[80%] object-cover selfie-preview"
     alt=""
   />
 </LayoutBase>

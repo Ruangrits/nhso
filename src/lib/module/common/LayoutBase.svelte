@@ -41,16 +41,16 @@
     {#if isNeedStickyBottomBar}
         <StickyBottomBar isDropShadow={false} isVisibleBorder={false}>
             <VBox>
-                {#if footerPrimaryBtnText}
-                    <Button custom="{Width.Full}" on:click={onPrimaryBtnClick}>
-                        <Text>{footerPrimaryBtnText}</Text>
-                    </Button>
-                {/if}
                 {#if footerSecondaryBtnText}
                     <Button custom="{Width.Full}"
                             style={ButtonStyle.Secondary}
                             on:click={onSecondaryBtnClick}>
                         <Text>{footerSecondaryBtnText}</Text>
+                    </Button>
+                {/if}
+                {#if footerPrimaryBtnText}
+                    <Button custom="{Width.Full}" on:click={onPrimaryBtnClick}>
+                        <Text>{footerPrimaryBtnText}</Text>
                     </Button>
                 {/if}
             </VBox>

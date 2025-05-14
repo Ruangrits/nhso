@@ -6,8 +6,6 @@
   const appContext = AppContext.get()
   const captions = appContext.translation.selfie
   const navCtrl = appContext.navCtrl
-
-
 </script>
 
 <Guide onClickNext={() => goto(navCtrl.page().selfie.scan)} {captions}/>
