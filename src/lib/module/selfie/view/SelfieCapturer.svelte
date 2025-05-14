@@ -13,10 +13,12 @@
     VerticalAlign,
   } from "@bull-shark/tdh-lib-mason";
   import CaptureButton from "../capture-button.png"
+  import FlipCamera from "../flip_camera.png"
   import { onDestroy, onMount } from "svelte";
   import { PhotoBooth } from "../../../camera/photobooth";
   import { CameraMode } from "../../../camera/types";
   import { goto } from "$app/navigation";
+   
   
 
 
@@ -63,39 +65,31 @@
         >กรุณาถ่ายรูปคู่ท่านและบัตรประชาชนให้เห็นตัวอักษร
         และข้อมูลบนหน้าบัตรชัดเจน</Text
       >
-      <!-- <Card custom="h-[50%] m-4" rounded="rounded-lg" padding="p-0"> -->
-      <!-- <video class="h-full w-full object-cover"></video> -->
-        <video class= "h-[60%] w-full object-cover"></video>
-        <div class="w-full flex justify-center py-6">
-          <button name="take_photo" id="take_photo" on:click={snapShot}>
-            <img src={CaptureButton} alt="capture" class="w-16 h-16" />
-          </button>
-          <button name="flash_button" id="flash_button on:click"></button>
-
+        <video class= "h-[70%] w-full object-cover"></video>
+        <div class="w-full flex items-center justify-center relative py-6">
+          <div class="absolute left-1/2 transform -translate-x-1/2 px-6">
+            <button name="take_photo" id="take_photo" on:click={snapShot}>
+              <img src={CaptureButton} alt="capture" class="w-16 h-16" />
+            </button>
+          </div>
+                  <div class="absolute right-[12%]">
+            <button name="flash_button" id="flash_button" on:click={() => { /* add logic here */ }}>
+              <img src={FlipCamera} alt="flip_camera" />
+            </button>
+          </div>
         </div>
+        
    </VBox>
   </Layout.Body>
 </Layout.Base>
 
 <style>
-  /*video {*/
-  /*    width: 80%;*/
-  /*    height: 70%;*/
-  /*    object-fit: cover;*/
-  /*}*/
-
   :root {
     --root-metric: 16px;
     --footer-height: calc(var(--root-metric) * 7);
     --button-height: calc(var(--root-metric) * 5);
   }
-/* 
-  button > svg {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  } */
+
 
   footer {
     position: absolute;
