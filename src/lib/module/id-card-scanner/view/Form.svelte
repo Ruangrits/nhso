@@ -5,10 +5,10 @@
   import LayoutBase from "$lib/module/common/LayoutBase.svelte"
   import SelectBgNone from '$lib/module/prescreening/view/components/select/SelectBGNone.svelte';
 
-  let idCardNumber = ""
-  let familyName = ""
-  let surname = ""
-  let dateOfBirth = ""
+  export let idCardNumber = ""
+  export let familyName = ""
+  export let surname = ""
+  export let dateOfBirth = ""
 
   export let onClickNext: () => void
 </script>
@@ -18,6 +18,7 @@
     <InputField label="เลขบัตรประชาชน" bind:value={idCardNumber}/>
     <InputField label="ชื่อ" bind:value={familyName}/>
     <InputField label="นามสกุล" bind:value={surname}/>
+
     <SelectBgNone
         bind:value={dateOfBirth}
         placeholder="วว"

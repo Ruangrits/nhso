@@ -26,60 +26,23 @@
   import LayoutBase from "$lib/module/common/LayoutBase.svelte";
   import type { SelfieDictionary } from "$lib/core/l10n/selfie";
   import { MessageBus } from "@bull-shark/tdh-lib-mason/message-bus";
-  import { SubmitSelfieAction, type SelfieAction } from "../message";
   import { SelfieActionHandler } from "../action-handler";
-  import { Ask } from "@bull-shark/tdh-lib-mason/async";
   import type { InvalidSelfieUiCaption } from "../failure-handler/selfie-failure-handler";
-  import type { Done } from "@bull-shark/tdh-lib-mason/lang-ext";
   import { ActionPageState } from "$lib/module/common/ActionPageState.enum";
-  import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte";
+  import type { SelfieAction } from "../message";
 
-  let isDialogWarnServiceNotAvailable: boolean = false;
-  export let selfieCaptured: string;
   export let onClickBack: () => void;
   export let onNext: () => void;
   export let captions: SelfieDictionary;
-  let actionPageState: ActionPageState = ActionPageState.clear;
+  export let actionPageState: ActionPageState
+  export let error: InvalidSelfieUiCaption;
+  export let selfieCaptured: string;
+  export let isDialogWarnServiceNotAvailable: boolean
+  export let onSubmitSelfieToVisionService:(selfieImage: string, selfieMessage: MessageBus<SelfieAction>) => void
 
   const selfieMessage = new MessageBus<SelfieAction>();
   new SelfieActionHandler(selfieCaptured, selfieMessage);
-  let error: InvalidSelfieUiCaption;
-  function submitSelfieToVisionService(selfieImage: string) {
-    const ask = Ask<InvalidSelfieUiCaption, Done>();
-    actionPageState = ActionPageState.pending;
-    triggerSelfieSubmitEvent(selfieImage, ask);
-    // TODO: remove this mock
-    setTimeout(() => {
-      actionPageState = ActionPageState.clear;
-      onNext();
-    }, 2000);
-    ask.onSuccess((_) => {
-      handleSuccess();
-    });
-    ask.onError((e) => {
-      handleError(e);
-    });
-  }
 
-  async function triggerSelfieSubmitEvent(
-    selfieImage: string,
-    ask: Ask<InvalidSelfieUiCaption, Done>
-  ) {
-    selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask));
-  }
-
-  function handleSuccess() {
-    actionPageState = ActionPageState.clear;
-    //TODO: navigate
-    onNext();
-    //-----------
-  }
-
-  function handleError(e: InvalidSelfieUiCaption) {
-    actionPageState = ActionPageState.error;
-    error = e;
-    isDialogWarnServiceNotAvailable = true;
-  }
 </script>
 
 {#if actionPageState === ActionPageState.pending}
@@ -108,7 +71,7 @@
   isNeedStickyBottomBar={true}
   footerPrimaryBtnText={captions.scan.preview.footerPrimaryBtn}
   footerSecondaryBtnText={captions.scan.preview.footerSecondaryBtn}
-  onPrimaryBtnClick={() => submitSelfieToVisionService(selfieCaptured)}
+  onPrimaryBtnClick={() => onSubmitSelfieToVisionService(selfieCaptured, selfieMessage)}
   onSecondaryBtnClick={onClickBack}
 >
   <img
