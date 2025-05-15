@@ -89,7 +89,6 @@
         }
       };
       isDialogWarnServiceNotAvailable = true;
-
   }
 
 </script>

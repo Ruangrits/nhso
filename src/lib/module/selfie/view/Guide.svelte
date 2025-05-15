@@ -35,7 +35,6 @@
         titleCaption={captions.guid.title}
         footerPrimaryBtnText={captions.guid.footerBtn}
         onPrimaryBtnClick={onClickNext}>
-
         <VBox custom="w-full items-center py-4">
           <img src={selfieGuideImage} alt="selfie-guid-image" />
         </VBox>
