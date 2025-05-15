@@ -50,9 +50,9 @@
     selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask));
      setTimeout(() => {
       actionPageState = ActionPageState.clear;
+      onNext();
     }, 2000); // 2000 milliseconds = 2 seconds
     // mock navigate
-    onNext();
 
     ask.onSuccess((_) => {
       actionPageState = ActionPageState.clear;
@@ -75,6 +75,7 @@
 <TopNavBar
   id="top-nav-bar"
   title="ยืนยันตัวตน"
+  customTxtTitle="!text-[20px] !font-semibold"
   leftIconName={IconName.West}
   onLeftIconClick={() => {
     history.back();

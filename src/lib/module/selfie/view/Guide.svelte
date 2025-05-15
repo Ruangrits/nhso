@@ -30,17 +30,17 @@
   <TopNavBar   
           id="top-nav-bar"
           title="ยืนยันตัวตน"
-          custom="!text-[20px] !font-semibold"
-          />
+          customTxtTitle="!text-[20px] !font-semibold"          />
   <LayoutBase
         titleCaption={captions.guid.title}
         footerPrimaryBtnText={captions.guid.footerBtn}
         onPrimaryBtnClick={onClickNext}>
 
-        <VBox custom="w-full items-center">
+        <VBox custom="w-full items-center py-4">
           <img src={selfieGuideImage} alt="selfie-guid-image" />
         </VBox>
         <VBox custom="w-full items-start pt-4 px-4 " verticalAlign={VerticalAlign.Top}>
             <Text color={TextColor.Grey500} custom="!text-[20px]"  >{@html captions.guid.desc} </Text>
         </VBox>
   </LayoutBase>
+

@@ -32,7 +32,7 @@
 <TopNavBar 
   id="top-nav-bar"
   title="สแกนบัตรประชาชน"
-  custom="!text-[20px] !font-semibold"
+  customTxtTitle="!text-[20px] !font-semibold"
   leftIconName={IconName.West}
 />
 <LayoutBase titleCaption={captions.guid.title}
@@ -45,6 +45,6 @@
               </VBox>
             </VBox>
     <VBox custom="w-full items-start pt-4 px-4" verticalAlign={VerticalAlign.Top}>
-        <Text color={TextColor.Grey500} custom="!text-[20px] !font-medium">{@html captions.guid.desc} </Text>
+        <Text color={TextColor.Grey500} custom="!text-[20px] ">{@html captions.guid.desc} </Text>
     </VBox>
 </LayoutBase>
