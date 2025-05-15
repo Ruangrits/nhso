@@ -14,7 +14,7 @@
     TextColor
   } from '@bull-shark/tdh-lib-mason'
   import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte"
-  import LayoutBase from "$lib/module/reserve-privilege-checking/view/LayoutBase.svelte"
+  import LayoutBase from "$lib/module/reserve-privilege/view/LayoutBase.svelte"
 </script>
 <LayoutBase>
     <VBox custom="w-full h-full"

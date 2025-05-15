@@ -1,11 +1,8 @@
 <script lang="ts">
   import {AsyncLoading, StateChange} from '@bull-shark/tdh-lib-mason/svelte/async'
-  import PrivilegeChecking from "$lib/module/reserve-privilege-checking/view/PrivilegeChecking.svelte"
-  import PrivilegeConfirmed from "$lib/module/reserve-privilege-checking/view/PrivilegeConfirmed.svelte"
-  import PrivilegeRejected from "$lib/module/reserve-privilege-checking/view/PrivilegeRejected.svelte"
-  import BaseBackground from "$lib/module/common/BaseBackground.svelte";
-  import NavigationBack from "$lib/module/common/navigation-back/NavigationBack.svelte";
-  import {AppContext} from "$lib/app/app-context";
+  import PrivilegeChecking from "$lib/module/reserve-privilege/view/PrivilegeChecking.svelte"
+  import PrivilegeConfirmed from "$lib/module/reserve-privilege/view/PrivilegeConfirmed.svelte"
+  import PrivilegeRejected from "$lib/module/reserve-privilege/view/PrivilegeRejected.svelte"
 
   const stateChange = StateChange.notifier()
   stateChange.pending()
