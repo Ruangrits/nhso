@@ -30,6 +30,7 @@
 
 
 
+
   let imagePreview: string | null = null;
   onMount(() => {
     console.log("selfie mounted");

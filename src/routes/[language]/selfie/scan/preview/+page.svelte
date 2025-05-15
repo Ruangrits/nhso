@@ -12,9 +12,6 @@
   const appContext = AppContext.get()
   const captions = appContext.translation.selfie
 
-  function onClickNext() {
-    // goto('/th/selfie/scan')
-  }
 
   function onClickBack() {
     goto('/th/selfie/scan')
@@ -22,4 +19,4 @@
 
 </script>
 
-<PreviewCapturedSelfie {selfieCaptured} {onClickBack} {onClickNext} {captions} />
+<PreviewCapturedSelfie {selfieCaptured} {onClickBack} {captions} />
