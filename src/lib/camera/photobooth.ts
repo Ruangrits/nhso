@@ -79,7 +79,7 @@ export class PhotoBooth {
 		PhotoBooth.canvas.height = PhotoBooth.video.videoHeight / (PhotoBooth.video.videoWidth / Defaults.width)
 
 		PhotoBooth.video.setAttribute('height', PhotoBooth.canvas.height.toString())
-		PhotoBooth.video.setAttribute('width', PhotoBooth.canvas.width.toString())
+		PhotoBooth.video.setAttribute('width', PhotoBfooth.canvas.width.toString())
 	}
 
 	static on_error = (reason: any) => {

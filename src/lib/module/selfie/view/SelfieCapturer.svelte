@@ -47,8 +47,6 @@
   }, 0);
 }
 
-
-
   onDestroy(() => {
     PhotoBooth.destroy();
   });
@@ -67,7 +65,7 @@
         <VBox verticalAlign={VerticalAlign.Top} gapSize={GapSize['32px']} custom='bg-black bg-opacity-80 h-full w-full'>
       <Text
         color={TextColor.BaseWhite}
-        style={TextStyle.Small1}
+        style={TextStyle.Body1}
         align={TextAlign.Center}
         custom="px-12 py-2 pt-6"
         >กรุณาถ่ายรูปคู่ท่านและบัตรประชาชนให้เห็นตัวอักษร
@@ -89,9 +87,7 @@
             <img src={FlipCamera} alt="flip_camera" class="w-full h-full object-contain" />
           </button>
         </div>
-      </div>
-      
-          
+      </div>   
    </VBox>
   </Layout.Base>
 
