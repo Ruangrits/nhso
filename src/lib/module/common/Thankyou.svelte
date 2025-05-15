@@ -8,9 +8,7 @@
     TextAlign,
     GapSize,
   } from '@bull-shark/tdh-lib-mason'
-  import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte"
-  import LayoutBase from "$lib/module/reserve-privilege/view/LayoutBase.svelte"
-  import CheckingBackground from "$lib/module/common/CheckingBackground.svelte"
+
   import doctorConsult from "./images/doctor-consult.png"
 </script>
 
