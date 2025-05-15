@@ -47,28 +47,51 @@
   function submitSelfieToVisionService(selfieImage: string) {
     const ask = Ask<InvalidSelfieUiCaption, Done>();
     actionPageState = ActionPageState.pending;
-    selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask));
+    triggerSelfieSubmitEvent(selfieImage, ask);
     // TODO: remove this mock
-     setTimeout(() => {
+    setTimeout(() => {
       actionPageState = ActionPageState.clear;
       onNext();
-    }, 2000); 
+    }, 2000);
     ask.onSuccess((_) => {
-      actionPageState = ActionPageState.clear;
-      //TODO: navigate
-      onNext();
-      //-----------
+      handleSuccess();
     });
     ask.onError((e) => {
-      actionPageState = ActionPageState.error;
-      error = e;
-      isDialogWarnServiceNotAvailable = true;
+      handleError(e);
     });
+  }
+
+  async function triggerSelfieSubmitEvent(
+    selfieImage: string,
+    ask: Ask<InvalidSelfieUiCaption, Done>
+  ) {
+    selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask));
+  }
+
+  function handleSuccess() {
+    actionPageState = ActionPageState.clear;
+    //TODO: navigate
+    onNext();
+    //-----------
+  }
+
+  function handleError(e: InvalidSelfieUiCaption) {
+    actionPageState = ActionPageState.error;
+    error = e;
+    isDialogWarnServiceNotAvailable = true;
   }
 </script>
 
 {#if actionPageState === ActionPageState.pending}
   <LoadingModal isDialogVisible={true} />
+{:else if actionPageState === ActionPageState.error}
+  <WarnModal
+    bind:isDialogVisible={isDialogWarnServiceNotAvailable}
+    title={error.title}
+    desc={error.description}
+    primaryBtnCaption={error.btnAcknowledge}
+  />
+  <LoadingModal isDialogVisible={false} />
 {/if}
 
 <TopNavBar
@@ -95,12 +118,3 @@
     alt=""
   />
 </LayoutBase>
-
-{#if error}
-  <WarnModal
-    bind:isDialogVisible={isDialogWarnServiceNotAvailable}
-    title={error.title}
-    desc={error.description}
-    primaryBtnCaption={error.btnAcknowledge}
-  />
-{/if}

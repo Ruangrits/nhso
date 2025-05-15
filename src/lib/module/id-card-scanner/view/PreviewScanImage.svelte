@@ -50,7 +50,8 @@
   function submitIdCardToVisionService(idCardImage: string) {
     const ask = Ask<InvalidIdCardCaption, Done>();
     actionPageState = ActionPageState.pending;
-    idCardScannerMessage.dispatch(new SubmitIdCardAction(idCardImage, ask));
+    triggerIdCardSubmitEvent(idCardImage,ask);
+   
     // TODO: remove this mock
      setTimeout(() => {
       actionPageState = ActionPageState.clear;
@@ -58,13 +59,26 @@
     }, 2000); 
 
     ask.onSuccess((_) => {
-      actionPageState = ActionPageState.clear;
+     handleSuccess();
+    });
+    ask.onError((e) => {
+     handleErrorAndMaxAttempts(e)
+    });
+  }
+
+  async function triggerIdCardSubmitEvent(idCardImage: string, ask: Ask<InvalidIdCardCaption, Done>) {
+    idCardScannerMessage.dispatch(new SubmitIdCardAction(idCardImage, ask));
+  }
+
+  function handleSuccess(){
+     actionPageState = ActionPageState.clear;
       //TODO: navigate
       onClickNext();
       //-----------
-    });
-    ask.onError((e) => {
-      actionPageState = ActionPageState.error;
+  }
+
+  function handleErrorAndMaxAttempts(e: InvalidIdCardCaption){
+     actionPageState = ActionPageState.error;
       error = e;
       error.onAcknowledge = () => {
         invalidIdCardCounter++;
@@ -75,7 +89,7 @@
         }
       };
       isDialogWarnServiceNotAvailable = true;
-    });
+
   }
 
 </script>
@@ -97,7 +111,7 @@
             footerSecondaryBtnText="ถ่ายใหม่อีกครั้ง"
             onPrimaryBtnClick={() => submitIdCardToVisionService(imageScanned)}
             onSecondaryBtnClick={onClickBack}>
-    <img src={imageScanned}/>
+    <img src={imageScanned} alt=""/>
 </LayoutBase>
 
 
