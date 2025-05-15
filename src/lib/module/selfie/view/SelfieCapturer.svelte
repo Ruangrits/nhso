@@ -52,7 +52,6 @@
 }
 
 
-
   onDestroy(() => {
     PhotoBooth.destroy();
   });
