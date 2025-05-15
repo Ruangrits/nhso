@@ -67,6 +67,9 @@ interface PagePaths {
   queuing: {
     landing: string
   }
+  navigationBack: {
+    landing: string
+  }
 }
 
 class PagePathImpl implements PagePaths {
@@ -75,6 +78,7 @@ class PagePathImpl implements PagePaths {
   readonly selfie: { guid:string; scan:string }
   readonly reservePrivilege: { landing: string }
   readonly queuing: { landing: string }
+  readonly navigationBack: { landing: string }
 
   constructor(private language: Language) {
     this.idCardScanner = {
@@ -96,6 +100,9 @@ class PagePathImpl implements PagePaths {
     }
     this.queuing = {
       landing: this.createPageUrl("/queuing")
+    }
+    this.navigationBack = {
+      landing: this.createPageUrl("/navigation-back")
     }
   }
 
