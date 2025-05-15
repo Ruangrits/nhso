@@ -60,6 +60,7 @@
 <TopNavBar
     id="top-nav-bar"
     title="ยืนยันตัวตน"
+    customTxtTitle="!text-[20px] !font-semibold"  
     leftIconName={IconName.West}
     onLeftIconClick={() => {
       history.back();
@@ -84,11 +85,20 @@
           </button>
         </div>
         <div class="absolute right-[12%]">
-          <button name="flip_camera" id="flip_camera" on:click={PhotoBooth.switchCamera}
-                  class="w-[12vw] max-w-[56px] aspect-square">
-            <img src={FlipCamera} alt="flip_camera" class="w-full h-full object-contain" />
+          <button
+            name="flip_camera"
+            id="flip_camera"
+            on:click={PhotoBooth.switchCamera}
+            class="w-[52px] h-[52px] rounded-full"
+          >
+            <img
+              src={FlipCamera}
+              alt="flip_camera"
+              class="w-full h-full object-contain"
+            />
           </button>
         </div>
+          
       </div>   
    </VBox>
   </Layout.Base>

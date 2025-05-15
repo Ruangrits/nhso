@@ -64,6 +64,7 @@
 <TopNavBar
   id="top-nav-bar"
   title="ยืนยันตัวตน"
+  customTxtTitle="!text-[20px] !font-semibold"
   leftIconName={IconName.West}
   onLeftIconClick={() => {
     history.back();
