@@ -48,12 +48,11 @@
     const ask = Ask<InvalidSelfieUiCaption, Done>();
     actionPageState = ActionPageState.pending;
     selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask));
+    // TODO: remove this mock
      setTimeout(() => {
       actionPageState = ActionPageState.clear;
       onNext();
-    }, 2000); // 2000 milliseconds = 2 seconds
-    // mock navigate
-
+    }, 2000); 
     ask.onSuccess((_) => {
       actionPageState = ActionPageState.clear;
       //TODO: navigate
