@@ -24,7 +24,7 @@
 		"vite": "^6.2.6"
 	},
 	"dependencies": {
-		"@bull-shark/tdh-lib-mason": "0.0.87",
+		"@bull-shark/tdh-lib-mason": "0.0.88",
 		"daisyui": "^4.4.24",
 		"tailwindcss": "^3.4.17"
 	}
