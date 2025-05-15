@@ -47,6 +47,7 @@ export class DefaultNavCtrl implements NavCtrl {
 }
 
 interface PagePaths {
+  landing: string
   idCardScanner: {
     guid: string
     scan: string
@@ -73,6 +74,7 @@ interface PagePaths {
 }
 
 class PagePathImpl implements PagePaths {
+  readonly landing: string
   readonly idCardScanner: { guid: string; scan: string; form: string }
   readonly preScreen: { symptomsForm: string; userInfo: string; address: string }
   readonly selfie: { guid:string; scan:string }
@@ -81,6 +83,7 @@ class PagePathImpl implements PagePaths {
   readonly navigationBack: { landing: string }
 
   constructor(private language: Language) {
+    this.landing = this.createPageUrl("")
     this.idCardScanner = {
       guid: this.createPageUrl("/id-card-scanner/guid"),
       scan: this.createPageUrl("/id-card-scanner/scan"),
