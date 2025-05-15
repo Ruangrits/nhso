@@ -14,6 +14,8 @@
   import type {QueuingDictionary} from "$lib/core/l10n/queuing"
 
   export let captions: QueuingDictionary
+
+  export let gotoMeetDoctor: () => void
 </script>
 
 <BaseBackground>
@@ -26,7 +28,7 @@
         </VBox>
         <Spacer spaceStyle={SpacerStyle.large}/>
         <Spacer/>
-        <Button>
+        <Button on:click={() => gotoMeetDoctor()}>
             <Text>{captions.queueConfirmation.btnNavigateToMeet}</Text>
         </Button>
     </VBox>

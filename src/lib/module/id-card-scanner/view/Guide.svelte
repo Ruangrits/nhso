@@ -29,11 +29,12 @@
   export let onTopBarIconLeft: () => void
 </script>
 
-<TopNavBar 
+<TopNavBar
   id="top-nav-bar"
   title="สแกนบัตรประชาชน"
   customTxtTitle="!text-[20px] !font-semibold"
   leftIconName={IconName.West}
+  onLeftIconClick={onTopBarIconLeft}
 />
 <LayoutBase titleCaption={captions.guid.title}
             footerPrimaryBtnText={captions.guid.footerBtn}

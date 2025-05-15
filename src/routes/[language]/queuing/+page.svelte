@@ -3,6 +3,7 @@
   import {AppContext} from "$lib/app/app-context"
   import WaitingMeetDoctor from "$lib/module/queuing/view/WaitingMeetDoctor.svelte"
   import QueueConfirmation from "$lib/module/queuing/view/QueueConfirmation.svelte"
+  import {goto} from "$app/navigation"
 
   const appContext = AppContext.get()
   const captions = appContext.translation.queuing
@@ -15,17 +16,25 @@
 
   setTimeout(() => {
     stateChange.success('')
-  }, 4000)
+  }, 3000)
 
+  function gotoMeetDoctor() {
+    goto(navCtrl.page().landing)
+  }
 </script>
 
 <AsyncLoading {stateChange} useDefaultLoading={false}>
     <svelte:fragment slot="pending">
-        <WaitingMeetDoctor/>
+        <WaitingMeetDoctor {captions}/>
     </svelte:fragment>
 
     <svelte:fragment slot="success">
-        <QueueConfirmation {captions}/>
+        <QueueConfirmation {captions} {gotoMeetDoctor}/>
+    </svelte:fragment>
+
+    <svelte:fragment slot="failed">
+        <!--        //TODO: -->
+        <WaitingMeetDoctor/>
     </svelte:fragment>
 </AsyncLoading>
 
