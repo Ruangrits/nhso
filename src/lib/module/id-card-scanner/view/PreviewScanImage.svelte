@@ -93,6 +93,8 @@
 
 </script>
 
+
+
 {#if actionPageState === ActionPageState.pending}
   <LoadingModal isDialogVisible={true} />
 {:else if actionPageState === ActionPageState.error}
@@ -104,6 +106,16 @@
     onPrimaryBtnClick={error.onAcknowledge}
   />
 {/if}
+
+<TopNavBar
+  id="top-nav-bar"
+  title="สแกนบัตรประชาชน"
+  customTxtTitle="!text-[20px] !font-semibold"
+  leftIconName={IconName.West}
+  onLeftIconClick={() => {
+    history.back();
+  }}
+/>
 
 <LayoutBase titleCaption="สแกนบัตรประชาชน"
             footerPrimaryBtnText="ยืนยัน"

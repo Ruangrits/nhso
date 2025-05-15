@@ -19,7 +19,7 @@
       StickyBottomBar,
       Button,
     } from '@bull-shark/tdh-lib-mason'
-  import selfieGuideImage from "../selfie-guide-image.png"
+  import selfieGuideImage from "$lib/module/common/images/selfie-guide-image.png"
   import LayoutBase from '$lib/module/common/LayoutBase.svelte';
   import type { SelfieDictionary } from '$lib/core/l10n/selfie';
   export let captions: SelfieDictionary
