@@ -37,6 +37,7 @@
   let isDialogWarnServiceNotAvailable: boolean = false;
   export let selfieCaptured: string;
   export let onClickBack: () => void;
+  export let onNext: () => void;
   export let captions: SelfieDictionary;
   let actionPageState: ActionPageState = ActionPageState.clear;
 
@@ -47,15 +48,17 @@
     const ask = Ask<InvalidSelfieUiCaption, Done>();
     actionPageState = ActionPageState.pending;
     selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask));
-    // Delete this timeout when the integration is done
-    setTimeout(() => {
+     setTimeout(() => {
       actionPageState = ActionPageState.clear;
     }, 2000); // 2000 milliseconds = 2 seconds
-     //mock navigate
+    // mock navigate
 
+    
     ask.onSuccess((_) => {
       actionPageState = ActionPageState.clear;
-      //navigate
+      //TODO: navigate
+      onNext();
+      //-----------
     });
     ask.onError((e) => {
       actionPageState = ActionPageState.error;
@@ -69,29 +72,29 @@
   <LoadingModal isDialogVisible={true} />
 {/if}
 
-  <TopNavBar
-    id="top-nav-bar"
-    title="ยืนยันตัวตน"
-    leftIconName={IconName.West}
-    onLeftIconClick={() => {
-      history.back();
-    }}
+<TopNavBar
+  id="top-nav-bar"
+  title="ยืนยันตัวตน"
+  leftIconName={IconName.West}
+  onLeftIconClick={() => {
+    history.back();
+  }}
+/>
+<LayoutBase
+  titleCaption={captions.scan.preview.title}
+  isNeedStickyBottomBar={true}
+  footerPrimaryBtnText={captions.scan.preview.footerPrimaryBtn}
+  footerSecondaryBtnText={captions.scan.preview.footerSecondaryBtn}
+  onPrimaryBtnClick={() => submitSelfieToVisionService(selfieCaptured)}
+  onSecondaryBtnClick={onClickBack}
+>
+  <img
+    src={selfieCaptured}
+    id="selie-preview"
+    class="h-[80%] object-cover selfie-preview"
+    alt=""
   />
-  <LayoutBase
-    titleCaption={captions.scan.preview.title}
-    isNeedStickyBottomBar={true}
-    footerPrimaryBtnText={captions.scan.preview.footerPrimaryBtn}
-    footerSecondaryBtnText={captions.scan.preview.footerSecondaryBtn}
-    onPrimaryBtnClick={() => submitSelfieToVisionService(selfieCaptured)}
-    onSecondaryBtnClick={onClickBack}
-  >
-    <img
-      src={selfieCaptured}
-      id="selie-preview"
-      class="h-[80%] object-cover selfie-preview"
-      alt=""
-    />
-  </LayoutBase>
+</LayoutBase>
 
 {#if error}
   <WarnModal

@@ -31,8 +31,8 @@
 <Layout.Base>
     <Layout.Body>
         <VBox custom="h-full w-full px-4" verticalAlign={VerticalAlign.Top} gapSize={GapSize['18px']}>
-            <Text color={TextColor.Grey500} style={TextStyle.Subtitle1} align={TextAlign.Center}
-                  custom="w-full py-2 pt-6">
+            <Text color={TextColor.Grey500} style={TextStyle.H2} align={TextAlign.Center}
+                  custom="w-full py-2 pt-6 font-semibold">
                 {titleCaption}
             </Text>
             <slot/>

@@ -30,17 +30,17 @@
   <TopNavBar   
           id="top-nav-bar"
           title="ยืนยันตัวตน"
-          leftIconName={IconName.West}/>
+          custom="!text-[20px] !font-semibold"
+          />
   <LayoutBase
         titleCaption={captions.guid.title}
         footerPrimaryBtnText={captions.guid.footerBtn}
         onPrimaryBtnClick={onClickNext}>
 
         <VBox custom="w-full items-center">
-          <img src={selfieGuideImage} alt="guide" />
+          <img src={selfieGuideImage} alt="selfie-guid-image" />
         </VBox>
-        <VBox custom="w-full items-start pt-4 px-5" verticalAlign={VerticalAlign.Top}>
-            <Text color={TextColor.Grey500} style={TextStyle.Body2} >{@html captions.guid.desc} </Text>
+        <VBox custom="w-full items-start pt-4 px-4 " verticalAlign={VerticalAlign.Top}>
+            <Text color={TextColor.Grey500} custom="!text-[20px]"  >{@html captions.guid.desc} </Text>
         </VBox>
   </LayoutBase>
-  

@@ -61,12 +61,20 @@ interface PagePaths {
     guid: string
     scan: string
   }
+  reservePrivilege: {
+    landing: string
+  }
+  queuing: {
+    landing: string
+  }
 }
 
 class PagePathImpl implements PagePaths {
   readonly idCardScanner: { guid: string; scan: string; form: string }
   readonly preScreen: { symptomsForm: string; userInfo: string; address: string }
   readonly selfie: { guid:string; scan:string }
+  readonly reservePrivilege: { landing: string }
+  readonly queuing: { landing: string }
 
   constructor(private language: Language) {
     this.idCardScanner = {
@@ -82,6 +90,12 @@ class PagePathImpl implements PagePaths {
     this.selfie = {
       guid: this.createPageUrl("/selfie/guid"),
       scan: this.createPageUrl("/selfie/scan"),
+    }
+    this.reservePrivilege = {
+      landing: this.createPageUrl("/reserve-privilege")
+    }
+    this.queuing = {
+      landing: this.createPageUrl("/queuing")
     }
   }
 

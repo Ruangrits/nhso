@@ -60,7 +60,7 @@ export class PhotoBooth {
     PhotoBooth.destroy();
 
     PhotoBooth.init(PhotoBooth.mode);
-	console.log(PhotoBooth.mode)
+    console.log(PhotoBooth.mode);
   }
 
   static get_media(): Promise<MediaStream> {
