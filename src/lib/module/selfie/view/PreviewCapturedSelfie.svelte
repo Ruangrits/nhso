@@ -32,16 +32,12 @@
   import type { SelfieAction } from "../message";
 
   export let onClickBack: () => void;
-  export let onNext: () => void;
   export let captions: SelfieDictionary;
   export let actionPageState: ActionPageState
   export let error: InvalidSelfieUiCaption;
   export let selfieCaptured: string;
   export let isDialogWarnServiceNotAvailable: boolean
-  export let onSubmitSelfieToVisionService:(selfieImage: string, selfieMessage: MessageBus<SelfieAction>) => void
-
-  const selfieMessage = new MessageBus<SelfieAction>();
-  new SelfieActionHandler(selfieCaptured, selfieMessage);
+  export let onSubmitSelfieToVisionService:() => void
 
 </script>
 
@@ -71,7 +67,7 @@
   isNeedStickyBottomBar={true}
   footerPrimaryBtnText={captions.scan.preview.footerPrimaryBtn}
   footerSecondaryBtnText={captions.scan.preview.footerSecondaryBtn}
-  onPrimaryBtnClick={() => onSubmitSelfieToVisionService(selfieCaptured, selfieMessage)}
+  onPrimaryBtnClick={onSubmitSelfieToVisionService}
   onSecondaryBtnClick={onClickBack}
 >
   <img
