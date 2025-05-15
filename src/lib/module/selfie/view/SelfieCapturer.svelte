@@ -12,8 +12,8 @@
     GapSize,
     VerticalAlign,
   } from "@bull-shark/tdh-lib-mason";
-  import CaptureButton from "../capture-button.png";
-  import FlipCamera from "../flip_camera.png";
+  import CaptureButton from "$lib/module/common/images/capture-button.png";
+  import FlipCamera from "$lib/module/common/images/flip_camera.png";
   import { onDestroy, onMount } from "svelte";
   import { PhotoBooth } from "../../../camera/photobooth";
   import { CameraMode } from "../../../camera/types";
@@ -53,6 +53,7 @@
 <TopNavBar
   id="top-nav-bar"
   title="ยืนยันตัวตน"
+  customTxtTitle="!text-[20px] !font-semibold"
   leftIconName={IconName.West}
   onLeftIconClick={() => {
     history.back();

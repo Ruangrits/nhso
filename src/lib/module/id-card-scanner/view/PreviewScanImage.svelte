@@ -27,6 +27,15 @@
   export let onClickBack: () => void
 
 </script>
+<TopNavBar
+  id="top-nav-bar"
+  title="สแกนบัตรประชาชน"
+  customTxtTitle="!text-[20px] !font-semibold"
+  leftIconName={IconName.West}
+  onLeftIconClick={() => {
+    history.back();
+  }}
+/>
 <LayoutBase titleCaption="สแกนบัตรประชาชน"
             footerPrimaryBtnText="ยืนยัน"
             footerSecondaryBtnText="ถ่ายใหม่อีกครั้ง"

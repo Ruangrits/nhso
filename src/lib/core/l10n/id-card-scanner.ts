@@ -48,8 +48,8 @@ export const IdCardScannerDictionary: MultiLingualDictionary<typeof Language> = 
   },
   scan: {
     title: {
-      th: "สแกนบัตรประชาชน",
-      en: "สแกนบัตรประชาชน"
+      th: "กรุณาวางบัตรให้อยู่ในกรอบที่กำหนด ให้เห็นตัวอักษร และข้อมูลบนหน้าบัตรชัดเจน",
+      en: "กรุณาวางบัตรให้อยู่ในกรอบที่กำหนด ให้เห็นตัวอักษร และข้อมูลบนหน้าบัตรชัดเจน",
     },
     preview: {
       title: {

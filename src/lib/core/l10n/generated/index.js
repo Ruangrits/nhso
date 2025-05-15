@@ -13,7 +13,7 @@ export const LocalizationBundle = {
         "footerBtn": "Next"
       },
       "scan": {
-        "title": "สแกนบัตรประชาชน",
+        "title": "กรุณาวางบัตรให้อยู่ในกรอบที่กำหนด ให้เห็นตัวอักษร และข้อมูลบนหน้าบัตรชัดเจน",
         "preview": {
           "title": "สแกนบัตรประชาชน",
           "footerPrimaryBtn": "Submit",
@@ -156,7 +156,7 @@ export const LocalizationBundle = {
         "footerBtn": "ถัดไป"
       },
       "scan": {
-        "title": "สแกนบัตรประชาชน",
+        "title": "กรุณาวางบัตรให้อยู่ในกรอบที่กำหนด ให้เห็นตัวอักษร และข้อมูลบนหน้าบัตรชัดเจน",
         "preview": {
           "title": "สแกนบัตรประชาชน",
           "footerPrimaryBtn": "ยืนยัน",
