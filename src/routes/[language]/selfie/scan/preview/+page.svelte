@@ -11,12 +11,18 @@
 
   const appContext = AppContext.get()
   const captions = appContext.translation.selfie
+  const navCtrl = appContext.navCtrl
 
 
   function onClickBack() {
     goto('/th/selfie/scan')
   }
 
+  //TODO: just create for test flow [can remove]
+  function onNext() {
+    goto(navCtrl.page().reservePrivilege.landing)
+  }
+
 </script>
 
-<PreviewCapturedSelfie {selfieCaptured} {onClickBack} {captions} />
+<PreviewCapturedSelfie {selfieCaptured} {onClickBack} {captions} {onNext}/>

@@ -3,34 +3,34 @@
   import PrivilegeChecking from "$lib/module/reserve-privilege/view/PrivilegeChecking.svelte"
   import PrivilegeConfirmed from "$lib/module/reserve-privilege/view/PrivilegeConfirmed.svelte"
   import PrivilegeRejected from "$lib/module/reserve-privilege/view/PrivilegeRejected.svelte"
+  import {AppContext} from "$lib/app/app-context"
+  import {goto} from "$app/navigation"
+
+  const appContext = AppContext.get()
+  const captions = appContext.translation.reservePrivilege
+  const navCtrl = appContext.navCtrl
 
   const stateChange = StateChange.notifier()
   stateChange.pending()
 
   setTimeout(() => {
     stateChange.success('')
+    setTimeout(() => {
+      goto(navCtrl.page().queuing.landing)
+    }, 1000)
   }, 4000)
-
-  const appContext = AppContext.get()
-  const captions = appContext.translation.preScreen
 </script>
 
+<AsyncLoading {stateChange} useDefaultLoading={false}>
+    <svelte:fragment slot="pending">
+        <PrivilegeChecking {captions}/>
+    </svelte:fragment>
 
+    <svelte:fragment slot="success">
+        <PrivilegeConfirmed {captions}/>
+    </svelte:fragment>
 
-<BaseBackground>
-    <NavigationBack {captions} />
-</BaseBackground>
-
-<!--<AsyncLoading {stateChange} useDefaultLoading={false}>-->
-<!--    <svelte:fragment slot="pending">-->
-<!--        <PrivilegeChecking/>-->
-<!--    </svelte:fragment>-->
-
-<!--    <svelte:fragment slot="success">-->
-<!--        <PrivilegeConfirmed/>-->
-<!--    </svelte:fragment>-->
-
-<!--    <svelte:fragment slot="failed">-->
-<!--        <PrivilegeRejected/>-->
-<!--    </svelte:fragment>-->
-<!--</AsyncLoading>-->
+    <svelte:fragment slot="failed">
+        <PrivilegeRejected {captions}/>
+    </svelte:fragment>
+</AsyncLoading>

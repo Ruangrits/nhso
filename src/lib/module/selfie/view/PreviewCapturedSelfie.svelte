@@ -34,6 +34,7 @@
   let isDialogWarnServiceNotAvailable: boolean = false
   export let selfieCaptured: string;
   export let onClickBack: () => void;
+  export let onNext: () => void;
   export let captions: SelfieDictionary
   let actionPageState: ActionPageState = ActionPageState.clear
 
@@ -47,7 +48,9 @@
     selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask))
     ask.onSuccess(_ => {
       actionPageState = ActionPageState.clear
-      //navigate
+      //TODO: navigate
+      onNext()
+      //-----------
     })
     ask.onError(e => {
       actionPageState = ActionPageState.error

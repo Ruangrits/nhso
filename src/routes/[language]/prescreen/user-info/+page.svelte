@@ -8,4 +8,4 @@
   const navCtrl = appContext.navCtrl
 </script>
 
-<UserInfo {captions} onClickNext={() => goto(navCtrl.page().preScreen.address)}/>
+<UserInfo {captions} onClickNext={() => goto(navCtrl.page().selfie.guid)}/>

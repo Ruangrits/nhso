@@ -1,20 +1,22 @@
 <script lang="ts">
   import {
-    VBox,
-    Card,
-    Text,
-    TextStyle,
-    HorizontalAlign,
-    TextAlign,
     GapSize,
+    HorizontalAlign,
     Icon,
     IconName,
-    IconStyle,
     IconSize,
-    TextColor
+    IconStyle,
+    Text,
+    TextAlign,
+    TextColor,
+    TextStyle,
+    VBox
   } from '@bull-shark/tdh-lib-mason'
-  import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte"
   import LayoutBase from "$lib/module/reserve-privilege/view/LayoutBase.svelte"
+
+  import type {ReservePrivilegeDictionary} from "$lib/core/l10n/reserve-privilege"
+
+  export let captions: ReservePrivilegeDictionary
 </script>
 <LayoutBase>
     <VBox custom="w-full h-full"
@@ -28,9 +30,7 @@
                 custom="m-1.5"
         />
 
-        <Text style={TextStyle.H2} align={TextAlign.Center}>ขออภัย!สิทธิของท่านไม่ตรงตาม
-            เงื่อนไขที่กำหนด
-        </Text>
-        <Text style={TextStyle.Subtitle1} align={TextAlign.Center}>กรุณาตรวจสอบสิทธิของท่านอีกครั้ง</Text>
+        <Text style={TextStyle.H2} align={TextAlign.Center}>{@html captions.rejected.title}</Text>
+        <Text style={TextStyle.Subtitle1} align={TextAlign.Center}>{@html captions.rejected.subtitle}</Text>
     </VBox>
 </LayoutBase>
