@@ -52,8 +52,8 @@
       actionPageState = ActionPageState.clear;
     }, 2000); // 2000 milliseconds = 2 seconds
     // mock navigate
+    onNext();
 
-    
     ask.onSuccess((_) => {
       actionPageState = ActionPageState.clear;
       //TODO: navigate
