@@ -13,11 +13,6 @@ export type SelfieDictionary = {
             title:string;
             footerPrimaryBtn: string;
             footerSecondaryBtn: string;
-            invalidPicture: {
-                title:string
-                desc:string
-                btn:string
-            }
         };
     }
 }
@@ -53,20 +48,6 @@ export const SelfieDictionary: MultiLingualDictionary<typeof Language> = {
               footerSecondaryBtn: {
                 th: "ถ่ายใหม่อีกครั้ง",
                 en: "ถ่ายใหม่อีกครั้ง"
-              },
-              invalidPicture: {
-                title:{
-                    th: "ขออภัย กรุณาถ่ายรูปใหม่อีกครั้ง",
-                    en: "ขออภัย กรุณาถ่ายรูปใหม่อีกครั้ง"
-                },
-                desc: {
-                    th: "เนื่องจากข้อมูลจากรูปของท่าน ไม่สามารถอ่านข้อมูลได้ หรือรูปถ่ายไม่ชัดเจน กรุณาถ่ายรูปใหม่อีกครั้งค่ะ",
-                    en: "เนื่องจากข้อมูลจากรูปของท่าน ไม่สามารถอ่านข้อมูลได้ หรือรูปถ่ายไม่ชัดเจน กรุณาถ่ายรูปใหม่อีกครั้งค่ะ"
-                },
-                btn: {
-                    th: "รับทราบ",
-                    en: "รับทราบ"
-                }
               }
             }
     }
