@@ -45,6 +45,6 @@
               </VBox>
             </VBox>
     <VBox custom="w-full items-start px-4" verticalAlign={VerticalAlign.Top}>
-        <Text color={TextColor.Grey500} custom="!text-[20px] !leading-relaxed">{@html captions.guid.desc} </Text>
+        <Text color={TextColor.Grey500} custom="!text-[20px] !leading-[30px]">{@html captions.guid.desc} </Text>
     </VBox>
 </LayoutBase>

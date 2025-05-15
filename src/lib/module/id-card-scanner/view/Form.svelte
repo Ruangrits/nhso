@@ -1,6 +1,13 @@
 <script lang="ts">
   import {
-    InputField
+  HorizontalAlign,
+    InputField,
+
+    VBox,
+
+    VerticalAlign
+
+
   } from '@bull-shark/tdh-lib-mason'
   import LayoutBase from "$lib/module/common/LayoutBase.svelte"
   import SelectBgNone from '$lib/module/prescreening/view/components/select/SelectBGNone.svelte';
@@ -18,6 +25,7 @@
     <InputField label="เลขบัตรประชาชน" bind:value={idCardNumber}/>
     <InputField label="ชื่อ" bind:value={familyName}/>
     <InputField label="นามสกุล" bind:value={surname}/>
+    <VBox verticalAlign ={VerticalAlign.Top}>
     <SelectBgNone
         bind:value={dateOfBirth}
         placeholder="วว"
@@ -36,5 +44,6 @@
         id="year-of-birth"
         data={[]}
         />
+      </VBox>
 
 </LayoutBase>
