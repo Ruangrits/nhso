@@ -6,4 +6,6 @@ const extendedTargets = [
 	'../node_modules/@bull-shark/tdh-lib-mason/**/*.{html,js,svelte,ts}'
 ]
 
+
 export default createTailwindConfig(extendedTargets)
+

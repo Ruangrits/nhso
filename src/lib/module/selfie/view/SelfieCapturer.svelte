@@ -19,12 +19,17 @@
   import { CameraMode } from "../../../camera/types";
   import LayoutBase from "$lib/module/common/LayoutBase.svelte"
   import { goto } from "$app/navigation";
+  import type { SelfieDictionary } from "$lib/core/l10n/selfie";
    
   
 
 
   export let onClickNext: () => void;
   export let onSnapShot: (selfieCaptured: string) => void;
+  export let captions: SelfieDictionary
+
+
+
 
   let imagePreview: string | null = null;
   onMount(() => {
@@ -36,15 +41,14 @@
 
   function snapShot() {
   setTimeout(() => {
-    const capturedImg = document.querySelector('#stack-photo img') as HTMLImageElement | null;
+    const capturedImg = document.querySelector('#stack-photo img:last-child') as HTMLImageElement | null;
     if (!capturedImg || !capturedImg.src) {
-      console.warn("No captured selfie image found");
       return;
     }
-
     onSnapShot(capturedImg.src);
     onClickNext();
   }, 0);
+
 }
 
   onDestroy(() => {
@@ -68,12 +72,10 @@
         style={TextStyle.Body1}
         align={TextAlign.Center}
         custom="px-12 py-2 pt-6"
-        >กรุณาถ่ายรูปคู่ท่านและบัตรประชาชนให้เห็นตัวอักษร
-        และข้อมูลบนหน้าบัตรชัดเจน</Text
+        >{captions.scan.title}</Text
       >
       <video autoplay class="h-[66%] w-full object-cover rounded-lg"></video>
       <div id="stack-photo" class="hidden"></div>
-      
       <div class="w-full flex items-center justify-center relative py-6">
         <div class="absolute left-1/2 transform -translate-x-1/2">
           <button name="take_photo" id="take_photo" on:click={snapShot}
@@ -82,7 +84,7 @@
           </button>
         </div>
         <div class="absolute right-[12%]">
-          <button name="flip_camera" id="flip_camera" on:click={() => {}}
+          <button name="flip_camera" id="flip_camera" on:click={PhotoBooth.switchCamera}
                   class="w-[12vw] max-w-[56px] aspect-square">
             <img src={FlipCamera} alt="flip_camera" class="w-full h-full object-contain" />
           </button>

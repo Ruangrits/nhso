@@ -23,12 +23,39 @@
   } from "@bull-shark/tdh-lib-mason";
   import LayoutBase from "$lib/module/common/LayoutBase.svelte";
   import type { SelfieDictionary } from "$lib/core/l10n/selfie";
+  import { MessageBus } from "@bull-shark/tdh-lib-mason/message-bus";
+  import { SubmitSelfieAction, type SelfieAction } from "../message";
+  import { SelfieActionHandler } from "../action-handler";
+  import { Ask } from "@bull-shark/tdh-lib-mason/async";
+  import type { InvalidSelfieUiCaption } from "../failure-handler/selfie-failure-handler";
+  import type { Done } from "@bull-shark/tdh-lib-mason/lang-ext";
+  import { ActionPageState } from "$lib/module/common/ActionPageState.enum";
 
   let isDialogWarnServiceNotAvailable: boolean = false
   export let selfieCaptured: string;
-  export let onClickNext: () => void;
   export let onClickBack: () => void;
   export let captions: SelfieDictionary
+  let actionPageState: ActionPageState = ActionPageState.clear
+
+
+  const selfieMessage = new MessageBus<SelfieAction>()
+  new SelfieActionHandler(selfieCaptured,selfieMessage)
+  let error: InvalidSelfieUiCaption
+  function submitSelfieToVisionService(selfieImage: string) {
+    const ask = Ask<InvalidSelfieUiCaption, Done>()
+    actionPageState = ActionPageState.pending
+    selfieMessage.dispatch(new SubmitSelfieAction(selfieImage, ask))
+    ask.onSuccess(_ => {
+      actionPageState = ActionPageState.clear
+      //navigate
+    })
+    ask.onError(e => {
+      actionPageState = ActionPageState.error
+      error = e
+      isDialogWarnServiceNotAvailable = true
+    })
+  }
+
 </script>
 
 <TopNavBar
@@ -40,11 +67,11 @@
   }}
 />
 <LayoutBase
-  titleCaption="ยืนยันรูปคู่บัตรประชาชน"
+  titleCaption={captions.scan.preview.title}
   isNeedStickyBottomBar={true}
-  footerPrimaryBtnText="ยืนยัน"
-  footerSecondaryBtnText="ถ่ายใหม่อีกครั้ง"
-  onPrimaryBtnClick={onClickNext}
+  footerPrimaryBtnText={captions.scan.preview.footerPrimaryBtn}
+  footerSecondaryBtnText={captions.scan.preview.footerSecondaryBtn}
+  onPrimaryBtnClick={() => submitSelfieToVisionService(selfieCaptured)}
   onSecondaryBtnClick={onClickBack}
 >
   <img
@@ -54,8 +81,11 @@
     alt=""
   />
 </LayoutBase>
-<!-- <WarnModal bind:isDialogVisible={isDialogWarnRequiredField}
-           title={captions.symptomSelection.warnDialogServiceNotAvailable.title}
-           desc={captions.symptomSelection.warnDialogServiceNotAvailable.desc}
-           primaryBtnCaption={captions.symptomSelection.warnDialogServiceNotAvailable.btn}/> -->
+
+{#if error}
+<WarnModal bind:isDialogVisible={isDialogWarnServiceNotAvailable}
+           title={error.title}
+           desc={error.description}
+           primaryBtnCaption={error.btnAcknowledge}/>
+{/if}
 

@@ -60,14 +60,13 @@ interface PagePaths {
   selfie: {
     guid: string
     scan: string
-    retry: string
   }
 }
 
 class PagePathImpl implements PagePaths {
   readonly idCardScanner: { guid: string; scan: string; form: string }
   readonly preScreen: { symptomsForm: string; userInfo: string; address: string }
-  readonly selfie: {guid:string; scan:string; retry:string}
+  readonly selfie: { guid:string; scan:string }
 
   constructor(private language: Language) {
     this.idCardScanner = {
@@ -83,7 +82,6 @@ class PagePathImpl implements PagePaths {
     this.selfie = {
       guid: this.createPageUrl("/selfie/guid"),
       scan: this.createPageUrl("/selfie/scan"),
-      retry: this.createPageUrl("/selfie/retry")
     }
   }
 

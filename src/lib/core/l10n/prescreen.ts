@@ -22,6 +22,16 @@ export type PreScreenDictionary = {
     desc: string
     btn: string
   }
+  navigateBackNhso: {
+    title: string
+    desc: string
+    btn: string
+  }
+  welcomeNhso: {
+    title: string
+    desc: string
+    btn: string
+  }
   userInfo: {
     height: {
       title: string
@@ -65,7 +75,6 @@ export type PreScreenDictionary = {
     }
   }
 }
-
 export const PreScreenDictionary: MultiLingualDictionary<typeof Language> = {
   footerBtn: {
     th: "ถัดไป",
@@ -206,7 +215,8 @@ export const PreScreenDictionary: MultiLingualDictionary<typeof Language> = {
           th: "วัน",
           en: "วัน"
         }
-      }
+      },
     }
   }
+
 }
