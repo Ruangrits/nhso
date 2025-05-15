@@ -14,7 +14,7 @@
         HorizontalAlign, TextSpacing, TextWhitespace, Button, Card,
     } from '@bull-shark/tdh-lib-mason'
     import {goto} from "$app/navigation"
-    import DoctorIcon from "$lib/module/common/navigation-back/DoctorIcon.svelte";
+    import DoctorIcon from "$lib/module/navigation-back/view/DoctorIcon.svelte";
     import ExplainBackToNhso from './ExplainBackToNHSO.svelte';
     import {AppContext} from "$lib/app/app-context"
     const appContext = AppContext.get()

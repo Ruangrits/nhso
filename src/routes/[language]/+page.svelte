@@ -1,8 +1,7 @@
 <script lang="ts">
   import {goto} from "$app/navigation"
-  import {HorizontalAlign, Text, TextAlign, TextWhitespace, VBox} from '@bull-shark/tdh-lib-mason'
+  import {HorizontalAlign, Text, TextAlign, TextWhitespace, VBox,Loading} from '@bull-shark/tdh-lib-mason'
   import {AppContext} from "$lib/app/app-context"
-  import LoadingSpin from "$lib/module/common/images/LoadingSpin.svelte"
   import BaseBackground from "$lib/module/common/BaseBackground.svelte"
   import MordeeAndNhsoimg from "$lib/module/common/MordeeAndNhsoimg.svelte"
 
@@ -22,7 +21,7 @@
         <Text custom="!text-2xl !leading-normal" whitespace={TextWhitespace.PreWrap}
               align={TextAlign.Center}>{captions.welcomeNhso.desc}</Text>
 
-        <LoadingSpin customs="mt-[10%]"/>
+        <Loading customs="mt-[10%]"/>
     </VBox>
 </BaseBackground>
 
